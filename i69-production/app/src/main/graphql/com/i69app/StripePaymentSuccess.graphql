@@ -1,0 +1,9 @@
+mutation StripePaymentSuccess( $intentId: String!,$status: String!){
+
+		stripePaymentSuccess( intentId: $intentId,status: $status){	
+			success
+			message
+		}
+
+
+}

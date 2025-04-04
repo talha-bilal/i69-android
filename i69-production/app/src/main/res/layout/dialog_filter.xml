@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    xmlns:chipcloud="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.i69.utils.Utils" />
+
+        <variable
+            name="stringConstant"
+            type="com.i69.applocalization.AppStringConstant" />
+
+        <variable
+            name="model"
+            type="com.i69.ui.viewModels.SearchViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/filter_back_ract">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/searchToolbar"
+            android:layout_width="0dp"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_marginHorizontal="@dimen/_5sdp"
+            android:background="@drawable/filter_header"
+            android:elevation="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/btnSkip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:padding="16dp"
+                android:text="@{String.valueOf(stringConstant.text_skip)}"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/toolbar_action_size"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <!--            android:text="@string/text_skip"-->
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:letterSpacing="0.2"
+                android:text="@{String.valueOf(stringConstant.filter)}"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!--            android:text="Filter"-->
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/clear_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:onClick="@{model.clearBtnClickListener::onClick}"
+                android:padding="16dp"
+                android:text="@{String.valueOf(stringConstant.clear)}"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/toolbar_action_size"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <!--            android:text="@string/clear"-->
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ScrollView
+            android:id="@+id/scrollContainer"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toTopOf="@+id/search_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/searchToolbar">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:orientation="vertical">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_marginTop="32dp">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/labelMaxDist"
+                        style="@style/MediumTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif"
+                        android:text="@{String.valueOf(stringConstant.maximum_distance)}"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                    <!--                    android:text="@string/maximum_distance"-->
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/maxDistanceLabel"
+                        style="@style/BoldMediumTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginEnd="2dp"
+                        android:layout_toLeftOf="@+id/miLabel"
+                        android:text="@{String.valueOf(Math.round(model.maxDistanceValue))}"
+                        app:layout_constraintBottom_toBottomOf="@id/labelMaxDist"
+                        app:layout_constraintRight_toLeftOf="@id/miLabel"
+                        tools:text="150" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/miLabel"
+                        style="@style/MediumTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:text="@string/miles"
+                        android:textColor="@color/white"
+                        app:layout_constraintBottom_toBottomOf="@id/maxDistanceLabel" />
+
+
+                </RelativeLayout>
+
+                <com.i69.ui.views.rangeseekbar.RangeSeekBar
+                    android:id="@+id/maxDistRangeSeekBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    app:layout_constraintEnd_toEndOf="@+id/miLabel"
+                    app:layout_constraintStart_toStartOf="@+id/labelMaxDist"
+                    app:layout_constraintTop_toBottomOf="@id/labelMaxDist"
+                    app:rsb_indicator_margin="100dp"
+                    app:rsb_max="2501"
+                    app:rsb_min="25"
+                    app:rsb_mode="single"
+                    app:rsb_progress_color="@color/search_seek_bar_progress"
+                    app:rsb_progress_default_color="@color/white"
+                    app:rsb_range_interval="1"
+                    app:rsb_thumb_drawable="@drawable/thumb_seekbar"
+                    app:rsb_thumb_scale_ratio="1.5"
+                    app:rsb_thumb_size="36dp"
+                    app:singleValue="@={model.maxDistanceValue}" />
+                <!--                app:rsb_min="25"-->
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="17dp"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/labelAgeRange"
+                        style="@style/MediumTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{String.valueOf(stringConstant.age_range)}"
+                        android:textColor="@color/white"
+                        app:layout_constraintStart_toStartOf="@+id/labelMaxDist"
+                        app:layout_constraintTop_toBottomOf="@id/maxDistRangeSeekBar" />
+
+                    <!--                    android:text="@string/age_range"-->
+                    <Space
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/ageRangeLeft"
+                        style="@style/BoldMediumTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{String.valueOf(Math.round(model.ageRangeLeft))}"
+                        app:layout_constraintBottom_toBottomOf="@id/labelAgeRange"
+                        app:layout_constraintRight_toLeftOf="@id/ageRangeDefis" />
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/ageRangeDefis"
+                        style="@style/BoldMediumTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="-"
+                        app:layout_constraintBottom_toBottomOf="@id/ageRangeLeft"
+                        app:layout_constraintRight_toLeftOf="@id/ageRangeRight"
+                        app:layout_constraintTop_toTopOf="@id/ageRangeLeft" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/ageRangeRight"
+                        style="@style/BoldMediumTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{String.valueOf(Math.round(model.ageRangeRight))}"
+
+                        app:layout_constraintBottom_toBottomOf="@id/ageRangeLeft"
+                        app:layout_constraintRight_toRightOf="parent" />
+                </LinearLayout>
+
+                <com.i69.ui.views.rangeseekbar.RangeSeekBar
+                    android:id="@+id/ageRangeSeekBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    app:layout_constraintEnd_toEndOf="@+id/miLabel"
+                    app:layout_constraintStart_toStartOf="@+id/labelMaxDist"
+                    app:layout_constraintTop_toBottomOf="@id/labelAgeRange"
+                    app:leftValue="@={model.ageRangeLeft}"
+                    app:rightValue="@={model.ageRangeRight}"
+                    app:rsb_indicator_margin="100dp"
+                    app:rsb_max="60"
+                    app:rsb_min="18"
+                    app:rsb_mode="range"
+                    app:rsb_progress_color="@color/search_seek_bar_progress"
+                    app:rsb_progress_default_color="@color/white"
+                    app:rsb_range_interval="1"
+                    app:rsb_thumb_drawable="@drawable/thumb_seekbar"
+                    app:rsb_thumb_scale_ratio="1.5"
+                    app:rsb_thumb_size="36dp" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:text="@{String.valueOf(stringConstant.personal_label)}"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="bold" />
+                    <!--                    android:text="@string/personal_label"-->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="17dp"
+                        android:orientation="horizontal">
+
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/labelHeightRange"
+                            style="@style/MediumTextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{String.valueOf(stringConstant.height_range)}"
+                            android:textColor="@color/white"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/personalExpand" />
+                        <!--                        android:text="@string/height_range"-->
+
+
+                        <Space
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            style="@style/BoldMediumTextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{Utils.convertInchToLb(model.heightRangeLeft)}"
+                            app:layout_constraintBottom_toBottomOf="@id/labelAgeRange"
+                            app:layout_constraintRight_toLeftOf="@id/ageRangeDefis" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            style="@style/BoldMediumTextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="-"
+                            app:layout_constraintBottom_toBottomOf="@id/ageRangeLeft"
+                            app:layout_constraintRight_toLeftOf="@id/ageRangeRight"
+                            app:layout_constraintTop_toTopOf="@id/ageRangeLeft" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            style="@style/BoldMediumTextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{Utils.convertInchToLb(model.heightRangeRight)}"
+                            app:layout_constraintBottom_toBottomOf="@id/ageRangeLeft"
+                            app:layout_constraintRight_toRightOf="parent" />
+
+                    </LinearLayout>
+
+                    <com.i69.ui.views.rangeseekbar.RangeSeekBar
+                        android:id="@+id/heightRangeSeekBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        app:leftValue="@={model.heightRangeLeft}"
+                        app:rightValue="@={model.heightRangeRight}"
+                        app:rsb_indicator_margin="100dp"
+                        app:rsb_max="97"
+                        app:rsb_min="55"
+                        app:rsb_mode="range"
+                        app:rsb_progress_color="@color/search_seek_bar_progress"
+                        app:rsb_progress_default_color="@color/white"
+                        app:rsb_range_interval="1"
+                        app:rsb_thumb_drawable="@drawable/thumb_seekbar"
+                        app:rsb_thumb_scale_ratio="1.5"
+                        app:rsb_thumb_size="36dp" />
+
+                    <include
+                        layout="@layout/layout_group_item_single"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:orientation="horizontal"
+                        app:mainTitle="@{@string/gender_label}"
+                        app:options="@{model.genderPicker}" />
+
+                    <include
+                        layout="@layout/layout_group_item_single"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        app:mainTitle="@{@string/family_plans_label}"
+                        app:options="@{model.familyPlans}" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="4dp"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            style="@style/MediumTextStyle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@{String.valueOf(stringConstant.tags_label)}"
+                            android:textColor="@color/white" />
+                        <!--                        android:text="@string/tags_label"-->
+                        <com.i69.ui.views.InterestsView
+                            android:id="@+id/tagsBtn"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:onClick="@{model.btnTagsAddListener::onClick}"
+                            chipcloud:allCaps="true"
+                            chipcloud:deselectedColor="@android:color/white"
+                            chipcloud:deselectedFontColor="@color/colorPrimary"
+                            chipcloud:gravity="left"
+                            chipcloud:minHorizontalSpacing="@dimen/small_padding"
+                            chipcloud:selectMode="none"
+                            chipcloud:selectedColor="@android:color/white"
+                            chipcloud:selectedFontColor="@color/colorPrimary"
+                            chipcloud:textSize="14sp"
+                            chipcloud:verticalSpacing="@dimen/default_padding" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:orientation="vertical">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:text="@{String.valueOf(stringConstant.groups_label)}"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/_14sdp"
+                        android:textStyle="bold" />
+                    <!--                    android:text="@string/groups_label"-->
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:layout_marginBottom="@dimen/_20sdp"
+                        android:orientation="vertical">
+
+                        <include
+                            layout="@layout/layout_group_item_single"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal"
+                            android:visibility="gone"
+                            app:mainTitle="@{@string/politic_views_label}"
+                            app:options="@{model.politics}" />
+
+
+                        <include
+                            layout="@layout/layout_group_item_single"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal"
+                            app:mainTitle="@{@string/religious_beliefs_label}"
+                            app:options="@{model.religious}" />
+
+                        <include
+                            layout="@layout/layout_group_item_single"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal"
+                            android:visibility="gone"
+                            app:mainTitle="@{@string/zodiac_sign_label}"
+                            app:options="@{model.zodiac}" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </ScrollView>
+
+        <ProgressBar
+            android:id="@+id/progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_10sdp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:elevation="5dp"/>
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/search_btn"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_alignParentRight="true"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="@dimen/_10sdp"
+            android:background="@drawable/apply_ract"
+            android:elevation="3dp"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:onClick="@{model.searchBtnClickListener::onClick}"
+            android:singleLine="true"
+            android:text="@{String.valueOf(stringConstant.text_apply)}"
+            android:textAllCaps="true"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+        <!--        android:text="@string/text_apply"-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

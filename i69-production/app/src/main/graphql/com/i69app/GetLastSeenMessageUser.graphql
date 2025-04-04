@@ -1,0 +1,8 @@
+query GetLastSeenMessageUser($roomId: Int!) {
+
+    lastSeenMessageUser(roomId: $roomId){
+        id
+        content
+    }
+
+}

@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/ibClose"
+        android:layout_width="@dimen/_25sdp"
+        android:layout_height="@dimen/_25sdp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="@dimen/_10sdp"
+        android:background="@android:color/transparent"
+        android:elevation="@dimen/_5sdp"
+        android:padding="@dimen/_20sdp"
+        android:src="@drawable/ic_close_24px"
+        android:tint="@color/white" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="88dp">
+
+        <com.otaliastudios.cameraview.CameraView
+            android:id="@+id/cameraView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:keepScreenOn="true"
+            app:cameraAudio="on"
+            app:cameraAutoFocusMarker="@string/cameraview_default_autofocus_marker"
+            app:cameraEngine="camera2"
+            app:cameraExperimental="true"
+            app:cameraFacing="back"
+            app:cameraFlash="auto"
+            app:cameraGestureLongTap="none"
+            app:cameraGesturePinch="zoom"
+            app:cameraGestureScrollHorizontal="filterControl1"
+            app:cameraGestureScrollVertical="exposureCorrection"
+            app:cameraGestureTap="autoFocus"
+            app:cameraGrid="off"
+            app:cameraMode="picture"
+            app:cameraPlaySounds="true"
+            app:cameraPreview="glSurface">
+            <!-- Watermark here -->
+
+        </com.otaliastudios.cameraview.CameraView>
+
+        <LinearLayout
+            android:layout_width="@dimen/_165sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_gravity="bottom|center"
+            android:layout_marginBottom="@dimen/_13sdp"
+            android:background="@drawable/rounded_corners"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="5">
+
+            <TextView
+                android:id="@+id/onePointZeroTV"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:background="@drawable/circle_filled"
+                android:gravity="center"
+                android:text="1"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="" />
+
+            <TextView
+                android:id="@+id/onePointTwoTV"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="1.2"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp" />
+
+            <TextView
+                android:id="@+id/onePointFiveTV"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="1.5"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp" />
+
+            <TextView
+                android:id="@+id/onePointSevenTV"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="1.7"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp" />
+
+            <TextView
+                android:id="@+id/twoZoomTV"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="2"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/cameraFlashBtn"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_gravity="center_horizontal"
+            android:padding="@dimen/_10sdp"
+            android:src="@drawable/ic_flash_auto_black_24dp"
+            app:tint="@color/white" />
+
+        <TextView
+            android:id="@+id/cameraNightModeBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_10sdp"
+            android:text="Day Mode"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:tint="@color/white" />
+    </FrameLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/filterList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/ibCapture"
+        android:layout_marginVertical="@dimen/_5sdp"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:itemCount="10"
+        tools:listitem="@layout/item_capture_preview" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivGallery"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_alignTop="@id/ibCapture"
+        android:layout_alignBottom="@id/ibCapture"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:background="@android:color/transparent"
+        android:elevation="@dimen/_5sdp"
+        android:src="@drawable/ic_gallery"
+        android:tint="@color/white" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/ibCapture"
+        android:layout_alignBottom="@id/ibCapture"
+        android:layout_toStartOf="@id/ibCapture"
+        android:layout_toEndOf="@id/ivGallery"
+        android:gravity="center">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/changeFilter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:elevation="@dimen/_5sdp"
+            android:padding="@dimen/_15sdp"
+            app:srcCompat="@drawable/ic_filters" />
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ibCapture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/tvInfo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:background="@android:color/transparent"
+        android:elevation="@dimen/_5sdp"
+        android:src="@drawable/image_capture"
+        android:tint="@color/white" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivRecord"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_alignTop="@id/ibCapture"
+        android:layout_alignBottom="@id/ibCapture"
+        android:layout_toStartOf="@id/ivSwitchCamera"
+        android:layout_toEndOf="@id/ibCapture"
+        android:background="@android:color/transparent"
+        android:elevation="@dimen/_5sdp"
+        app:srcCompat="@drawable/record" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivSwitchCamera"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_alignTop="@id/ibCapture"
+        android:layout_alignBottom="@id/ibCapture"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:background="@android:color/transparent"
+        android:elevation="@dimen/_5sdp"
+        android:src="@drawable/baseline_flip_camera_android_24"
+        android:tint="@color/white" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/_5sdp"
+        android:elevation="@dimen/_5sdp"
+        android:fontFamily="sans-serif-light"
+        android:gravity="center"
+        android:text="@string/hold_for_video_tap_for_photo"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:visibility="invisible" />
+
+</RelativeLayout>

@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_add_new_moment_graph"
+    app:startDestination="@id/newUserMomentFragment">
+    <fragment
+        android:id="@+id/newUserMomentFragment"
+        android:name="com.i69.ui.screens.main.moment.NewUserMomentFragment"
+        android:label="NewUserMomentFragment"
+        tools:layout="@layout/fragment_user_moments">
+        <action
+            android:id="@+id/action_newUserMomentFragment_to_momentAddCommentFragment"
+            app:destination="@id/momentsAddCommentFragment" />
+        <action
+            android:id="@+id/action_newUserMomentFragment_to_userMomentsFragment"
+            app:destination="@id/userMomentsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/momentsAddCommentFragment"
+        android:name="com.i69.ui.screens.main.moment.momentcomment.MomentAddCommentFragment"
+        android:label="@string/moments_comment"
+        tools:layout="@layout/fragment_moments_addcomments" >
+        <action
+            android:id="@+id/action_userProfileFragment_to_userGiftsFragment"
+            app:destination="@+id/giftsFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@+id/momentsAddCommentFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <action
+        android:id="@+id/action_global_otherUserProfileFragment"
+
+        app:destination="@id/searchUserProfileFragment" />
+    <fragment
+        android:id="@+id/searchUserProfileFragment"
+        android:name="com.i69.ui.screens.main.search.userProfile.SearchUserProfileFragment"
+        android:label="@string/my_profile"
+        tools:layout="@layout/fragment_user_profile">
+        <action
+            android:id="@+id/action_userProfileFragment_to_userGiftsFragment"
+            app:destination="@+id/giftsFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@+id/userProfileFragment" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_purchase"
+        app:destination="@id/purchaseFragment"
+        app:popUpTo="@+id/purchaseFragment"
+        app:popUpToInclusive="true" />
+
+    <action
+        android:id="@+id/action_global_plan"
+        app:destination="@id/planFragment"
+        app:popUpTo="@+id/planFragment"
+        app:popUpToInclusive="true" />
+
+    <action
+        android:id="@+id/action_global_plan_detail"
+        app:destination="@id/planDetailFragment"
+        app:popUpTo="@+id/planDetailFragment"
+        app:popUpToInclusive="true" />
+
+    <fragment
+        android:id="@+id/purchaseFragment"
+        android:name="com.i69.ui.screens.main.coins.PurchaseFragment"
+        android:label="@string/buy_coins"
+        tools:layout="@layout/fragment_purchase" >
+
+        <action
+            android:id="@+id/action_purchaseFragment_to_userProfileFragment"
+            app:destination="@id/userProfileFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/userProfileFragment"
+        android:name="com.i69.profile.UserProfileFragment"
+        android:label="@string/my_profile"
+        tools:layout="@layout/fragment_user_profile"/>
+    <action
+        android:id="@+id/action_global_setting"
+        app:destination="@id/settingsFragment"
+        app:popUpTo="@+id/settingsFragment"
+        app:popUpToInclusive="true" />
+
+    <fragment
+        android:id="@+id/planFragment"
+        android:name="com.i69.ui.screens.main.subscription.PlanDetailFragment"
+        android:label="@string/buy_coins"
+        tools:layout="@layout/fragment_purchase_plan" />
+
+    <fragment
+        android:id="@+id/planDetailFragment"
+        android:name="com.i69.ui.screens.main.subscription.PlanDetailBuyFragment"
+        android:label="@string/buy_coins"
+        tools:layout="@layout/fragment_plan_detail" >
+        <action
+            android:id="@+id/actionGoToUserProfile"
+            app:destination="@id/userProfileFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.i69.ui.screens.main.settings.SettingsFragment"
+        android:label="@string/settings"
+        tools:layout="@layout/fragment_settings">
+
+        <action
+            android:id="@+id/action_settingsFragment_to_blockedUsersFragment"
+            app:destination="@id/blockedUsersFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpToInclusive="true" />
+
+
+        <action
+            android:id="@+id/action_settingsFragment_to_userSubScriptionDetailFragment"
+            app:destination="@id/userSubScriptionDetailFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpToInclusive="true" />
+
+
+    </fragment>
+
+    <action
+        android:id="@+id/action_global_subscription_detail"
+        app:destination="@id/userSubScriptionDetailFragment"
+        app:popUpTo="@+id/settingsFragment"
+        app:popUpToInclusive="true" />
+
+    <fragment
+        android:id="@+id/blockedUsersFragment"
+        android:name="com.i69.ui.screens.main.settings.BlockedUsersFragment"
+        android:label="@string/blocked_accounts"
+        tools:layout="@layout/fragment_blocked_users_settings" />
+    <fragment
+        android:id="@+id/userSubScriptionDetailFragment"
+        android:name="com.i69.ui.screens.main.settings.UserSubscriptionDetailFragment"
+        android:label="@string/subscription"
+        tools:layout="@layout/fragment_user_subscription_detail" />
+
+
+    <action
+        android:id="@+id/actionGoToPurchaseFragment"
+        app:destination="@id/purchaseFragment"
+        app:popUpToInclusive="true" />
+    <action
+        android:id="@+id/actionGoToPrivacyFragment"
+        app:destination="@id/privacyFragment"
+        app:popUpToInclusive="true" />
+    <fragment
+        android:id="@+id/privacyFragment"
+        android:name="com.i69.ui.screens.main.privacy.PrivacyFragment"
+        android:label="PrivacyFragment"
+        tools:layout="@layout/fragment_privacy"/>
+
+    <action
+        android:id="@+id/actionGoToContactFragment"
+        app:destination="@id/contactFragment"
+        app:popUpToInclusive="true" />
+    <fragment
+        android:id="@+id/contactFragment"
+        android:name="com.i69.ui.screens.main.contact.ContactUsFragment"
+        android:label="ContactUsFragment"
+        tools:layout="@layout/fragment_privacy"/>
+
+
+    <action
+        android:id="@+id/action_global__to_fragment_follower"
+        app:destination="@id/fragmentUserFollowingFollower" />
+
+
+    <fragment
+        android:id="@+id/fragmentUserFollowingFollower"
+        android:name="com.i69.ui.screens.main.follower.UserFolloweFollowingFragment"
+        android:label="@string/follow"
+        tools:layout="@layout/fragment_user_follow_folllowers" />
+
+
+    <action
+        android:id="@+id/action_global__to_fragment_visitor"
+        app:destination="@id/fragmentUserVisitorVisiting" />
+
+
+    <fragment
+        android:id="@+id/fragmentUserVisitorVisiting"
+        android:name="com.i69.ui.screens.main.visitors.FragmentUserVisitorVisiting"
+        android:label="@string/visitors"
+        tools:layout="@layout/fragment_user_follow_folllowers" />
+
+
+
+</navigation>

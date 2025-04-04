@@ -1,0 +1,6 @@
+/i69-production/.gradle
+/i69-production/.idea
+i69-production/app/staging/release/i69app-staging-release.apk
+/i69-staging/.gradle
+/i69-staging/.idea
+i69-staging/app/staging/release/i69app-staging-release.apk

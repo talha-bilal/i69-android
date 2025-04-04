@@ -1,0 +1,6 @@
+query StripePublishableKey{
+
+	stripePublishableKey{
+			publishableKey
+	}
+}

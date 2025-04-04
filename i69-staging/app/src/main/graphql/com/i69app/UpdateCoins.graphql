@@ -1,0 +1,8 @@
+
+mutation UpdateCoin($id:String!,$coins:Int!){
+    updateCoin(id:$id, coins: $coins) {
+        id
+        success
+        coins
+    }
+}

@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/searchToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@drawable/search_toolbar_graient"
+            android:elevation="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/toolbarHamburger"
+                android:layout_width="64dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/menu_icons"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/toolbarLogo"
+                android:layout_width="@dimen/_36sdp"
+                android:layout_height="match_parent"
+                android:background="?selectableItemBackgroundBorderless"
+                android:contentDescription="@string/app_name"
+                android:padding="@dimen/_8sdp"
+                android:src="@drawable/ic_arrow_back_black_24dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/toolbarHamburger"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:src="@drawable/appnametext"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/toolbarLogo"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!--            <com.google.android.material.textview.MaterialTextView-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginStart="6dp"-->
+            <!--                android:fontFamily="sans-serif-medium"-->
+            <!--                android:letterSpacing="0.2"-->
+            <!--                android:text="@string/isixtynine"-->
+            <!--                android:textAllCaps="true"-->
+            <!--                android:textColor="@color/black"-->
+            <!--                android:textStyle="bold"-->
+            <!--                app:layout_constraintBottom_toBottomOf="parent"-->
+            <!--                app:layout_constraintStart_toEndOf="@+id/toolbarLogo"-->
+            <!--                app:layout_constraintTop_toTopOf="parent" />-->
+
+            <ImageView
+                android:id="@+id/bell"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="?selectableItemBackgroundBorderless"
+                android:contentDescription="@string/app_name"
+                android:padding="12dp"
+                android:src="@drawable/ic_bell"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/counter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                android:background="@drawable/circular_border"
+                android:gravity="center"
+                android:text="0"
+                android:textColor="@color/black"
+                android:textSize="10sp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/bell" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txtTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="sans-serif-light"
+            android:gravity="center"
+            android:text="@string/contact_us"
+            android:textAllCaps="false"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/_18sdp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/cvContact" />
+
+
+        <!--        <com.google.android.material.card.MaterialCardView-->
+        <!--            android:id="@+id/cvContact"-->
+        <!--            app:layout_constraintTop_toTopOf="parent"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--            android:layout_marginHorizontal="@dimen/_20sdp"-->
+        <!--            app:cardCornerRadius="20dp"-->
+        <!--            app:cardBackgroundColor="#33000000"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content">  -->
+        <LinearLayout
+            android:id="@+id/cvContact"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:background="@drawable/background_contact_us"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_name_title"
+                        style="@style/MediumTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/name_label" />
+                    <!--                android:text="@string/name_label"-->
+
+                    <EditText
+                        android:id="@+id/etName"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/edit_text_height"
+                        android:background="@null"
+                        android:fontFamily="sans-serif-light"
+                        android:hint="@string/name_hint"
+                        android:imeOptions="actionNext"
+                        android:inputType="textPersonName"
+                        android:singleLine="true"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/edit_profile_text_hint_gray"
+                        android:textSize="20sp"
+                        android:textStyle="normal" />
+                    <!--                android:hint="@string/name_hint"-->
+                </LinearLayout>
+
+                <View
+                    style="@style/DividerBlack"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_email_title"
+                        style="@style/MediumTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/email" />
+                    <!--                android:text="@string/name_label"-->
+
+                    <EditText
+                        android:id="@+id/etEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/edit_text_height"
+                        android:background="@null"
+                        android:fontFamily="sans-serif-light"
+                        android:hint="@string/email"
+                        android:imeOptions="actionNext"
+                        android:inputType="textEmailAddress"
+                        android:singleLine="true"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/edit_profile_text_hint_gray"
+                        android:textSize="20sp"
+                        android:textStyle="normal" />
+                    <!--                android:hint="@string/name_hint"-->
+                </LinearLayout>
+
+                <View
+                    style="@style/DividerBlack"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_about_title"
+                        style="@style/MediumTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Your Message" />
+                    <!--                android:text="@string/about"-->
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/etMessage"
+                            android:layout_width="0dp"
+                            android:layout_height="150dp"
+                            android:layout_marginTop="8dp"
+                            android:background="@null"
+                            android:breakStrategy="balanced"
+                            android:fitsSystemWindows="true"
+                            android:fontFamily="sans-serif-light"
+                            android:gravity="left|top"
+                            android:hint="Enter your message"
+                            android:imeOptions="actionDone"
+                            android:inputType="textMultiLine"
+                            android:lineSpacingExtra="@dimen/_2sdp"
+                            android:maxLength="250"
+                            android:maxLines="5"
+                            android:singleLine="false"
+                            android:textColor="@color/white"
+                            android:textColorHint="@color/edit_profile_text_hint_gray"
+                            android:textSize="20sp"
+                            android:textStyle="normal"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                        <!--                    android:hint="@string/about_description"-->
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </LinearLayout>
+
+                <!--                <androidx.appcompat.widget.AppCompatButton-->
+                <!--                    android:id="@+id/sentMsg"-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_gravity="center_horizontal"-->
+                <!--                    android:layout_marginTop="@dimen/_5sdp"-->
+                <!--                    android:background="@drawable/bg_upload_button_shape"-->
+                <!--                    android:elevation="4dp"-->
+                <!--                    android:paddingLeft="70dp"-->
+                <!--                    android:paddingRight="70dp"-->
+                <!--                    android:text="Send Message"-->
+                <!--                    android:textColor="#fff" />-->
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/sentMsg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="@dimen/_20sdp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="@dimen/_2sdp"
+                    android:layout_weight="1"
+                    android:background="@drawable/wallet_upgrade_button"
+                    android:gravity="center"
+                    android:paddingVertical="12dp"
+                    android:text="@string/send_message"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/_14sdp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/pg"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:progressBackgroundTint="@color/primary_blue"
+            android:progressTint="@color/primary_blue"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

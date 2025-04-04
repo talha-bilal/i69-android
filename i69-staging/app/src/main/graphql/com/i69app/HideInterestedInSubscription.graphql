@@ -1,0 +1,14 @@
+subscription HideInterestedInSubscription{
+
+    hideInterestedInSubscription {
+        userInterestedinRegion {
+            id
+            userInterestedIn {
+                id
+                categoryName
+                createdAt
+                strName
+            }
+        }
+    }
+}

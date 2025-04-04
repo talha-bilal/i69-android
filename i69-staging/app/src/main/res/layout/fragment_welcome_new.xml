@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/welcome_top"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_160sdp"
+            android:background="@drawable/ic_coin_price_new"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <ImageView
+                android:id="@+id/welcome_Logo"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_116sdp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_welcome_top_logo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/welcome_top_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:fontFamily="sans-serif-black"
+            android:gravity="center"
+            android:textSize="@dimen/_15sdp"
+            android:text="@string/welcome_hint"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="normal"
+            app:layout_constraintTop_toBottomOf="@+id/welcome_top"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <LinearLayout
+            android:id="@+id/interested_in_relationships_container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/start"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/welcome_top_description">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <FrameLayout
+                    android:id="@+id/flNewFriend"
+                    app:layout_constraintEnd_toStartOf="@id/flRelationship"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:background="@drawable/welcome_screen_item_back"
+                    android:layout_width="@dimen/_120sdp"
+                    android:layout_height="@dimen/_120sdp">
+
+                    <com.i69.ui.views.CheckableImageButton
+                        android:id="@+id/new_friends"
+                        android:layout_width="@dimen/_68sdp"
+                        android:layout_height="wrap_content"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:layout_gravity="center"
+                        app:checkedSrc="@drawable/ic_new_friend_checked"
+                        app:colorChecked="@color/white"
+                        app:colorDefault="@color/colorPrimary"
+                        app:orientation="vertical"
+                        app:text="@string/new_friends"
+                        app:tintColorChecked="@color/wheat"
+                        app:tintColorDefault="@color/lightGray"
+                        app:uncheckedSrc="@drawable/ic_new_friend_unchecked" />
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/flRelationship"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/flNewFriend"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:background="@drawable/welcome_screen_item_back"
+                    android:layout_width="@dimen/_120sdp"
+                    android:layout_height="@dimen/_120sdp">
+
+
+                    <com.i69.ui.views.CheckableImageButton
+                        android:id="@+id/relationship"
+                        android:layout_width="@dimen/_68sdp"
+                        android:layout_height="wrap_content"
+                        android:clickable="false"
+                        android:focusable="false"
+                        app:checkedSrc="@drawable/ic_relationship"
+                        app:colorChecked="@color/white"
+                        app:colorDefault="@color/colorPrimary"
+                        app:orientation="vertical"
+                        android:layout_gravity="center"
+                        app:text="@string/welcome_relationships"
+                        app:tintColorChecked="@color/wheat"
+                        app:tintColorDefault="@color/lightGray"
+                        app:uncheckedSrc="@drawable/ic_relationship" />
+
+                </FrameLayout>
+
+
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <FrameLayout
+                    android:id="@+id/flRoommates"
+                    app:layout_constraintEnd_toStartOf="@id/flbusiness_contacts"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:background="@drawable/welcome_screen_item_back"
+                    android:layout_width="@dimen/_120sdp"
+                    android:layout_height="@dimen/_120sdp">
+
+                    <com.i69.ui.views.CheckableImageButton
+                        android:id="@+id/roommates"
+                        android:layout_width="@dimen/_68sdp"
+                        android:layout_height="wrap_content"
+                        android:clickable="false"
+                        android:focusable="false"
+                        app:checkedSrc="@drawable/ic_roommates_checked"
+                        app:colorChecked="@color/white"
+                        app:colorDefault="@color/colorPrimary"
+                        app:orientation="vertical"
+                        app:text="@string/roommates"
+                        android:layout_gravity="center"
+                        app:tintColorChecked="@color/wheat"
+                        app:tintColorDefault="@color/lightGray"
+                        app:uncheckedSrc="@drawable/ic_roommates_unchecked" />
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:id="@+id/flbusiness_contacts"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/flRoommates"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:background="@drawable/welcome_screen_item_back"
+                    android:layout_width="@dimen/_120sdp"
+                    android:layout_height="@dimen/_120sdp">
+
+                    <com.i69.ui.views.CheckableImageButton
+                        android:id="@+id/business_contacts"
+                        android:layout_width="@dimen/_68sdp"
+                        android:layout_height="wrap_content"
+                        android:clickable="false"
+                        android:focusable="false"
+                        app:checkedSrc="@drawable/ic_business_contacts_checked"
+                        app:colorChecked="@color/white"
+                        app:colorDefault="@color/colorPrimary"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/roommates"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:orientation="vertical"
+                        app:text="@string/business_contacts"
+                        android:layout_gravity="center"
+                        app:tintColorChecked="@color/wheat"
+                        app:tintColorDefault="@color/lightGray"
+                        app:uncheckedSrc="@drawable/ic_business_contacts_unchecked" />
+
+
+                </FrameLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/start"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/_20sdp"
+            android:layout_marginTop="24dp"
+            android:layout_marginRight="@dimen/_20sdp"
+            android:background="@drawable/ic_lets_go_back"
+            android:padding="@dimen/_12sdp"
+            android:text="@string/welcome_button"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textColor="@color/welcome_button_text"
+            android:textSize="@dimen/_12sdp"
+            android:textStyle="bold"
+            android:layout_marginBottom="@dimen/_16sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

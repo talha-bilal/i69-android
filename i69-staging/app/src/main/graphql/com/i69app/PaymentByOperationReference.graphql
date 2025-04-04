@@ -1,0 +1,11 @@
+query PaymentByOperationReference($operationReference: String!){
+
+    paymentByOperationReference(operationReference: $operationReference){
+        id
+        chargingToken
+        authorisationState
+        operationReference
+        billingIdentity
+    }
+
+}

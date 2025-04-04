@@ -1,0 +1,9 @@
+mutation ChargePayment($amount: Float!,$chargingToken: String!,$description: String!){
+
+    chargePayment(amount: $amount,chargingToken: $chargingToken,description: $description){
+        chargingToken
+        id
+        success
+    }
+
+}

@@ -1,0 +1,9 @@
+query UserInterests{
+    userInterests {
+        id
+        categoryName
+        createdAt
+        strName
+
+    }
+}

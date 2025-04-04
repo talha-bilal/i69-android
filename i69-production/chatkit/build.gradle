@@ -1,0 +1,30 @@
+apply plugin: 'com.android.library'
+apply plugin: 'maven-publish'
+
+android {
+    namespace = "com.stfalcon.chatkit"
+    compileSdk = 35
+
+    defaultConfig {
+        minSdk = 21
+        consumerProguardFiles 'proguard.txt'
+    }
+    android {
+        lintOptions {
+            abortOnError false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'com.google.android.material:material:1.12.0'
+    implementation 'com.google.android.flexbox:flexbox:3.0.0'
+}

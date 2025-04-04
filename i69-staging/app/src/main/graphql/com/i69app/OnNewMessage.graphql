@@ -1,0 +1,26 @@
+subscription OnNewMessage($roomId: Int!,$token: String!,$moderatorId: String!){
+
+    onNewMessage(roomId: $roomId,token: $token,moderatorId: $moderatorId){
+        message {
+            id
+            content
+            timestamp
+            messageType
+            roomId{
+                id
+                name
+            }
+            userId {
+                id
+                username
+                avatarIndex
+                avatarPhotos {
+                    url
+                }
+            }
+            privatePhotoRequestId
+            requestStatus
+        }
+    }
+
+}

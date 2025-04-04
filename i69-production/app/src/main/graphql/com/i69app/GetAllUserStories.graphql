@@ -1,0 +1,172 @@
+query GetAllUserStories($first: Int!,$after: String!,$pk: String!, $id:ID!) {
+    allUserStories (after: $after,first: $first,pk: $pk, id:$id){
+        edges {
+            cursor
+
+            node {
+
+                createdDate
+                file
+                fileType
+                id
+                pk
+                thumbnail
+                commentsCount
+                comments
+                {
+                    pageInfo {
+                        endCursor
+                        hasNextPage
+                        hasPreviousPage
+                        startCursor
+                    }
+                    edges {
+                        cursor
+                        node {
+                             id
+                            pk
+                            createdDate
+                            commentDescription
+                            objectId
+							likesCount
+							likes{
+                    pageInfo {
+                        endCursor
+                        hasNextPage
+                        hasPreviousPage
+                        startCursor
+                    }
+                    edges {
+                        cursor
+                        node {
+                            id
+                            pk
+                            objectId
+                            user {
+                                id
+                                fullName
+                                avatarIndex
+                                avatarPhotos {
+                                    url
+                                    id
+                                }
+                                avatar {
+                                    id
+                                    url
+                                }
+                            }
+                        }
+                    }
+                }
+                            user {
+
+                                id
+                                 fullName
+                                avatarIndex
+                                avatarPhotos {
+                                    url
+                                    id
+                                }
+                                avatar {
+                                    id
+                                    url
+                                }
+                            }
+							
+							replys {
+								edges {
+									node {
+										pk
+										commentDescription
+										createdDate
+										id
+										user {
+											id
+											email
+											fullName
+											username
+											avatarPhotos {
+													url
+													id
+													user
+											}
+										}
+									}
+								}
+							}
+							
+                        }
+                    }
+                }
+
+                likesCount
+                
+				
+				
+				likes{
+                    pageInfo {
+                        endCursor
+                        hasNextPage
+                        hasPreviousPage
+                        startCursor
+                    }
+                    edges {
+                        cursor
+                        node {
+                            id
+                            pk
+                            objectId
+                            user {
+                                id
+                                fullName
+                                avatarIndex
+                                avatarPhotos {
+                                    url
+                                    id
+                                }
+                                avatar {
+                                    id
+                                    url
+                                }
+                            }
+                        }
+                    }
+                }
+
+
+                user {
+                    id
+                    fullName
+                    avatar {
+
+                        url
+                        id
+                    }
+
+                    avatarIndex
+                    avatarPhotos {
+                        url
+                        id
+                    }
+                }
+            }
+
+        }
+
+        pageInfo {
+            endCursor
+            hasNextPage
+            hasPreviousPage
+            startCursor
+        }
+    }
+}
+
+
+
+
+
+
+
+
+

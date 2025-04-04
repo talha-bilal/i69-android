@@ -1,0 +1,11 @@
+subscription onUpdatePrivateRequest(){
+
+    onUpdatePrivateRequest{
+        
+    userToView
+    requestedUser
+    status
+  
+    }
+
+}

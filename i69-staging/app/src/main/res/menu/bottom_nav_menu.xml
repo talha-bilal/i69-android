@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_home_graph"
+        android:title="Home"
+        android:icon="@drawable/select_home"/>
+
+    <item
+        android:id="@+id/nav_search_graph"
+        android:title="Search"
+        android:icon="@drawable/select_search"/>
+
+    <item
+        android:id="@+id/nav_market_graph"
+        android:title="Market"
+        android:icon="@drawable/market_icon"
+        android:visible="true"/>
+
+    <item
+        android:id="@+id/nav_add_new_moment_graph"
+        android:title="Add Moment"
+        android:icon="@drawable/select_add"/>
+    <item
+        android:id="@+id/nav_chat_graph"
+        android:title="Chat"
+        android:icon="@drawable/select_chat" />
+    <item
+        android:id="@+id/nav_user_profile_graph"
+        android:title="profile"
+        android:icon="@drawable/ic_default_user"/>
+</menu>

@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingHorizontal="@dimen/_20sdp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+    <!--    android:padding="@dimen/_15sdp"-->
+    <!--    android:padding="@dimen/_30sdp"-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:background="@drawable/interseted_in_options_background"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <RelativeLayout
+                android:id="@+id/relSerious"
+                android:padding="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+            <TextView
+                android:id="@+id/header_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:fontFamily="@font/roboto_medium_numbers"
+                android:textSize="@dimen/_16sdp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:text="@string/serious_relationship"/>
+
+                <ImageView
+                    android:src="@drawable/drawable_add_button"
+                    android:layout_alignParentEnd="true"
+                    android:layout_width="wrap_content"
+                    android:background="@color/trans"
+                    android:layout_height="wrap_content"/>
+            </RelativeLayout>
+
+            <View
+                android:background="@color/black"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+            <RelativeLayout
+                android:id="@+id/relNewFrnd"
+                android:padding="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:fontFamily="@font/roboto_medium_numbers"
+                    android:textSize="@dimen/_16sdp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:text="@string/new_friends"/>
+
+                <ImageView
+                    android:src="@drawable/drawable_add_button"
+                    android:layout_alignParentEnd="true"
+                    android:layout_width="wrap_content"
+                    android:background="@color/trans"
+                    android:layout_height="wrap_content"/>
+            </RelativeLayout>
+
+            <View
+                android:background="@color/black"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+            <RelativeLayout
+                android:id="@+id/relRommate"
+                android:padding="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:fontFamily="@font/roboto_medium_numbers"
+                    android:textSize="@dimen/_16sdp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:text="@string/roommates"/>
+
+                <ImageView
+                    android:src="@drawable/drawable_add_button"
+                    android:layout_alignParentEnd="true"
+                    android:layout_width="wrap_content"
+                    android:background="@color/trans"
+                    android:layout_height="wrap_content"/>
+            </RelativeLayout>
+
+            <View
+                android:background="@color/black"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+            <RelativeLayout
+                android:id="@+id/relCasulaDating"
+                android:padding="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:fontFamily="@font/roboto_medium_numbers"
+                    android:textSize="@dimen/_16sdp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:text="@string/casual_dating"/>
+
+                <ImageButton
+                    android:src="@drawable/drawable_add_button"
+                    android:layout_alignParentEnd="true"
+                    android:layout_width="wrap_content"
+                    android:background="@color/trans"
+                    android:layout_height="wrap_content"/>
+            </RelativeLayout>
+
+            <View
+                android:background="@color/black"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"/>
+
+            <RelativeLayout
+                android:id="@+id/relBusiContact"
+                android:padding="@dimen/_10sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:fontFamily="@font/roboto_medium_numbers"
+                    android:textSize="@dimen/_16sdp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:text="@string/business_contacts"/>
+
+                <ImageButton
+                    android:src="@drawable/drawable_add_button"
+                    android:layout_alignParentEnd="true"
+                    android:layout_width="wrap_content"
+                    android:background="@color/trans"
+                    android:layout_height="wrap_content"/>
+            </RelativeLayout>
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_28sdp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:visibility="gone"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:background="@drawable/ic_triangle"
+                app:tint="@color/sdahd"
+                android:backgroundTint="@color/sdahd"
+                tools:ignore="MissingConstraints" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

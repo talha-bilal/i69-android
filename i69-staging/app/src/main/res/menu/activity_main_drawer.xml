@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:id="@+id/groupSearch"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_search_graph"
+            android:icon="@drawable/ic_search_active"
+            android:title="@string/search_drawer" />
+    </group>
+
+    <group
+        android:id="@+id/groupContactUs"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_item_contact"
+            android:icon="@drawable/ic_email"
+            android:title="@string/contact_us" />
+    </group>
+
+    <group
+        android:id="@+id/groupInviteFriend"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_invite_friend"
+            android:icon="@drawable/invite_friends"
+            android:title="@string/invite_friend" />
+    </group>
+
+    <group
+        android:id="@+id/groupBuyCoin"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_coinpurchase_graph"
+            android:icon="@drawable/icon_buy_chat_coins_yellow"
+            android:title="@string/buy_coins" />
+    </group>
+
+    <group
+        android:id="@+id/groupBuyPackage"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_coinplan_graph"
+            android:icon="@drawable/icon_buy_chat_coins_yellow"
+            android:title="@string/subscription_caps" />
+    </group>
+
+    <group
+        android:id="@+id/groupPrivacy"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_privacy_graph"
+            android:icon="@drawable/icon_privacy"
+            android:title="@string/privacy_drawer" />
+    </group>
+
+    <group
+        android:id="@+id/groupSettings"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_setting_graph"
+            android:icon="@drawable/ic_settings"
+            android:title="@string/settings" />
+    </group>
+
+
+</menu>

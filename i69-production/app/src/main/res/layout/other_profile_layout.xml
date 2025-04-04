@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.i69.utils.ViewUtilsKt" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="stringConstant"
+            type="com.i69.applocalization.AppStringConstant" />
+
+
+        <variable
+            name="user"
+            type="com.i69.data.models.User" />
+
+        <variable
+            name="vm"
+            type="com.i69.profile.vm.VMProfile" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp">
+
+
+        <RelativeLayout
+            android:id="@+id/rvOtherprofile"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:background="@color/profileTransBlackOverlayColor"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/_5sdp">
+
+            <LinearLayout
+                android:id="@+id/linear_flag_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="right"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="8dp"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="@{vm.isMessageEnabled ? View.VISIBLE : View.GONE}"
+                tools:ignore="RtlHardcoded">
+
+
+                <ImageView
+                    android:id="@+id/imageFlag"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/app_name" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/text_flag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_10sdp"
+                    tools:ignore="PrivateResource" />
+
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/init_chat_msg_btn"
+                android:layout_width="@dimen/_40sdp"
+                android:layout_height="@dimen/_40sdp"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="bottom|end"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:contentDescription="@string/app_name"
+                android:onClick="@{() -> vm.onSendMsgClick()}"
+                android:src="@drawable/ic_chat_shadow"
+                tools:visibility="visible" />
+
+            <com.google.android.material.textview.MaterialTextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:background="@drawable/chat_button_gradiant"
+                android:drawablePadding="10dp"
+                android:elevation="10dp"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:onClick="@{() -> vm.onSendMsgClick()}"
+                android:paddingStart="@dimen/_16sdp"
+                android:paddingTop="@dimen/_4sdp"
+                android:paddingEnd="@dimen/_16sdp"
+                android:paddingBottom="@dimen/_4sdp"
+                android:text="@{stringConstant.chat}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+            <!--android:text="@{String.valueOf(stringConstant.send_message)}"-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                tools:ignore="UselessParent">
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxWidth="@dimen/_80sdp"
+                        android:fontFamily="sans-serif-medium"
+                        android:maxLines="1"
+                        android:text="@{vm.data.user.fullName}"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/profile_header_text_size"
+                        android:textStyle="normal"
+                        tools:ignore="PrivateResource,SpUsage,TextSizeCheck"
+                        tools:text="Angeas suresh" />
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_green"
+                        android:layout_width="@dimen/_10sdp"
+                        android:layout_height="@dimen/_10sdp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="3dp"
+                        android:background="@drawable/green_online"
+                        android:fontFamily="sans-serif-medium"
+                        android:textSize="@dimen/_12sdp"
+                        tools:ignore="PrivateResource,RtlHardcoded" />
+                    <!--                                                    vm.isCoinsEnabled ? View.GONE : View.VISIBLE-->
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_lastseen"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_marginLeft="5dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="center"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/_12sdp"
+                        tools:ignore="PrivateResource,RtlHardcoded"
+                        tools:text="Online" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/llPlanBack"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginVertical="@dimen/_6sdp"
+                            android:background="@drawable/ic_paltinum_back"
+                            android:gravity="center"
+                            android:paddingStart="@dimen/_1sdp"
+                            android:paddingEnd="@dimen/_1sdp">
+
+                            <ImageView
+                                android:layout_width="@dimen/_18sdp"
+                                android:layout_height="@dimen/_18sdp"
+                                android:padding="3dp"
+                                android:src="@drawable/membership_icon_black" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/txtMember"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginEnd="3dp"
+                                android:fontFamily="sans-serif"
+                                android:gravity="center"
+                                android:text="@string/free_member"
+                                android:textColor="@color/memberShipTextColor"
+                                android:textSize="@dimen/profile_header_lables"
+                                android:textStyle="normal"
+                                tools:ignore="SpUsage,TextSizeCheck" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/_2sdp"
+
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="@dimen/_20sdp"
+                                android:layout_height="@dimen/_20sdp"
+                                android:src="@drawable/ic_age_golden" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:fontFamily="sans-serif"
+                                android:gravity="center"
+                                android:text="@{vm.data.user.ageValue}"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/profile_header_lables"
+                                android:textStyle="normal"
+                                tools:ignore="SpUsage,TextSizeCheck"
+                                tools:text="Age" />
+
+
+                            <ImageView
+                                android:layout_width="@dimen/_20sdp"
+                                android:layout_height="@dimen/_20sdp"
+                                android:layout_marginLeft="@dimen/_10sdp"
+                                android:src="@drawable/ic_height" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:fontFamily="sans-serif"
+                                android:gravity="center"
+                                android:text="@{vm.data.user.heightValue}"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/profile_header_lables"
+                                android:textStyle="normal"
+                                tools:ignore="SpUsage,TextSizeCheck"
+                                tools:text="Height" />
+
+
+                            <ImageView
+                                android:layout_width="@dimen/_20sdp"
+                                android:layout_height="@dimen/_20sdp"
+                                android:layout_marginLeft="@dimen/_10sdp"
+                                android:src="@drawable/ic_location_new" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/tv_distance"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:fontFamily="sans-serif"
+                                android:gravity="center"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/profile_header_lables"
+                                android:textStyle="normal"
+                                tools:ignore="SpUsage,TextSizeCheck"
+                                tools:text="Distance" />
+
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/lyt_coins_gifts_123"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:orientation="horizontal"
+                            android:visibility="gone"
+                            tools:ignore="DisableBaselineAlignment,RtlHardcoded">
+                            <!--                            android:visibility="@{vm.isCoinsEnabled ? View.GONE : View.VISIBLE}"-->
+                            <LinearLayout
+                                android:id="@+id/action_earning_123"
+                                android:layout_width="@dimen/_42sdp"
+                                android:layout_height="wrap_content"
+                                android:gravity="top|center"
+                                android:orientation="vertical"
+                                android:visibility="@{vm.isEarnCoinsEnabled() ? View.VISIBLE : View.GONE}"
+                                tools:visibility="visible">
+                                <!--android:onClick="@{() -> vm.onGiftClick()}"-->
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif"
+                                    android:gravity="center"
+                                    android:maxEms="4"
+                                    android:text="@{String.valueOf(stringConstant.wallet)}"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/profile_header_lables"
+                                    tools:ignore="SpUsage" />
+                                <!--                                android:text="@string/wallet"-->
+                                <!--                                android:text="@string/wallet"-->
+
+                                <!--                                android:text="@string/wallet"-->
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="@dimen/_22sdp"
+                                    android:layout_height="@dimen/_22sdp"
+                                    app:srcCompat="@drawable/icon_wallet" />
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:id="@+id/earning_gift_count_123"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif"
+                                    android:text="@{String.valueOf(vm.data.user.giftCoins)}"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/profile_header_lables"
+                                    android:textStyle="normal"
+                                    tools:ignore="SpUsage"
+                                    tools:text="@string/user_number" />
+
+
+                            </LinearLayout>
+                            <!--                            android:visibility="@{vm.isCoinsEnabled ? View.VISIBLE : View.GONE}"-->
+                            <LinearLayout
+                                android:id="@+id/action_coins_123"
+                                android:layout_width="@dimen/_42sdp"
+                                android:layout_height="wrap_content"
+                                android:gravity="top|center"
+                                android:onClick="@{() -> vm.onCoinsClick()}"
+                                android:orientation="vertical"
+                                android:visibility="@{vm.isCoinsEnabled ? View.VISIBLE : View.GONE}"
+                                tools:visibility="visible">
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif"
+                                    android:gravity="center"
+                                    android:maxEms="5"
+                                    android:text="@{String.valueOf(stringConstant.coins)}"
+                                    android:textAllCaps="true"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/profile_header_lables"
+                                    tools:ignore="SpUsage" />
+                                <!--                                android:text="@string/coins"-->
+                                <!--                                android:text="@string/coins"-->
+
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="@dimen/_22sdp"
+                                    android:layout_height="@dimen/_22sdp"
+                                    app:srcCompat="@drawable/coin1" />
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:id="@+id/coins_amt_123"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif"
+                                    android:text="@{String.valueOf(vm.data.user.purchaseCoins)}"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/profile_header_lables"
+                                    android:textStyle="normal"
+                                    tools:ignore="SpUsage"
+                                    tools:text="@string/user_number" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/layoutLikes_123"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="@dimen/small_padding"
+                                android:layout_marginEnd="8dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="vertical"
+                                android:visibility="@{vm.isLikesIconEnabled() ? View.VISIBLE : View.GONE}"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/lyt_coins_gifts"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:ignore="NestedWeights"
+                                tools:visibility="gone">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/likes_u_"
+                                    android:layout_width="38dp"
+                                    android:layout_height="38dp"
+                                    app:srcCompat="@drawable/icon_like_count" />
+
+                                <androidx.appcompat.widget.AppCompatTextView
+                                    android:id="@+id/userLikesCount_"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif"
+                                    android:text="@{String.valueOf(vm.data.user.likes.size())}"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/profile_header_lables"
+                                    android:textStyle="normal"
+                                    tools:ignore="SpUsage"
+                                    tools:text="456" />
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/action_gifts_123"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginEnd="16dp"
+                                android:layout_weight="1"
+                                android:gravity="top|center"
+                                android:onClick="@{() -> vm.onGiftClick()}"
+                                android:orientation="vertical"
+                                android:visibility="@{vm.isGiftIconEnabled() ? View.VISIBLE : View.GONE}"
+                                tools:visibility="gone">
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif"
+                                    android:text="@{String.valueOf(stringConstant.gifts)}"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/profile_header_lables"
+                                    android:textStyle="bold"
+                                    tools:ignore="SpUsage" />
+                                <!--                                android:text="@string/gifts"-->
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="39dp"
+                                    android:layout_height="39dp"
+                                    app:srcCompat="@drawable/pink_gift_noavb" />
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:id="@+id/gift_count_123"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif"
+                                    android:gravity="center_horizontal"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/profile_header_lables"
+                                    android:textStyle="normal"
+                                    tools:ignore="SpUsage"
+                                    tools:text="@string/user_coins" />
+
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <!--<LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginRight="@dimen/_5sdp"
+                            android:gravity="right|center"
+                            android:orientation="horizontal"
+                            tools:ignore="RtlHardcoded">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/init_chat_msg_btn"
+                                android:layout_width="100dp"
+                                android:layout_height="40dp"
+                                android:layout_marginRight="@dimen/_10sdp"
+                                android:background="@drawable/chat_button_gradiant"
+                                android:drawablePadding="10dp"
+                                android:elevation="10dp"
+                                android:fontFamily="sans-serif-medium"
+                                android:gravity="center"
+                                android:onClick="@{() -> vm.onSendMsgClick()}"
+                                android:paddingStart="10dp"
+                                android:paddingTop="8dp"
+                                android:paddingEnd="10dp"
+                                android:paddingBottom="8dp"
+                                android:text="@{String.valueOf(stringConstant.send_message)}"
+                                android:textAllCaps="true"
+                                android:textColor="@color/black"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                tools:visibility="gone" />
+&lt;!&ndash;                            android:text="@string/send_message"&ndash;&gt;
+
+
+                        </LinearLayout>-->
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:weightSum="3">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_weight=".5"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif"
+                            android:gravity="left"
+                            android:text="@{String.valueOf(stringConstant.age_label)}"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/profile_header_lables"
+                            android:textStyle="normal"
+                            tools:ignore="RtlHardcoded,SpUsage,TextSizeCheck" />
+                        <!--                        android:text="@string/age_label"-->
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:fontFamily="sans-serif"
+                            android:gravity="left"
+                            android:text="@{String.valueOf(stringConstant.height_label)}"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/profile_header_lables"
+                            android:textStyle="normal"
+                            tools:ignore="RtlHardcoded,SpUsage,TextSizeCheck" />
+                        <!--                        android:text="@string/height_label"-->
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:fontFamily="sans-serif"
+                            android:gravity="left"
+                            android:text="Distance"
+                            android:textColor="@color/white"
+
+                            android:textSize="@dimen/profile_header_lables"
+                            android:textStyle="normal"
+                            android:visibility="@{vm.isEditEnabled ? View.GONE : View.VISIBLE}"
+                            tools:ignore="HardcodedText,RtlHardcoded,SpUsage,TextSizeCheck" />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif"
+                            android:gravity="left"
+                            android:text=":"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/profile_header_lables"
+                            android:textStyle="normal"
+                            tools:ignore="HardcodedText,RtlHardcoded,SpUsage,TextSizeCheck" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:fontFamily="sans-serif"
+                            android:gravity="left"
+                            android:text=":"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/profile_header_lables"
+                            android:textStyle="normal"
+                            tools:ignore="HardcodedText,RtlHardcoded,SpUsage,TextSizeCheck" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:fontFamily="sans-serif"
+                            android:gravity="left"
+                            android:text=":"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/profile_header_lables"
+                            android:textStyle="normal"
+                            android:visibility="@{vm.isEditEnabled ? View.GONE : View.VISIBLE}"
+                            tools:ignore="HardcodedText,RtlHardcoded,SpUsage,TextSizeCheck" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="@dimen/profile_header_spacing2"
+                        android:layout_height="0dp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="8dp"
+                        android:layout_weight=".7"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/userAge_"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:text="@{vm.data.user.ageValue}"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/profile_header_lables"
+                            android:textStyle="normal"
+                            tools:ignore="SpUsage,TextSizeCheck"
+                            tools:text="Age" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/userHeight_"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:fontFamily="sans-serif"
+                            android:gravity="center"
+                            android:text="@{vm.data.user.heightValue}"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/profile_header_lables"
+                            android:textStyle="normal"
+                            tools:ignore="SpUsage,TextSizeCheck"
+                            tools:text="Age" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tv_distance123"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:textColor="@color/white"
+                            android:visibility="@{vm.isEditEnabled ? View.GONE : View.VISIBLE}"
+                            app:layout_constraintBottom_toTopOf="@id/profileTabs"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            tools:text="235 km" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+
+    </RelativeLayout>
+</layout>

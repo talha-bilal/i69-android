@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="stringConstant"
+            type="com.i69.applocalization.AppStringConstant" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:gravity="center"
+        android:layoutDirection="ltr">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scroll_view1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:clipToPadding="false"
+            android:fillViewport="true"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <!--        icon_send_message_chet-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:scrollbars="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/searchContainer"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@color/black"
+                        android:padding="10dp"
+                        android:visibility="gone"
+
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+                        <!--            android:paddingTop="15dp"-->
+                        <!--            android:paddingBottom="15dp"-->
+
+
+                        <!--        android:layout_marginStart="16dp"-->
+                        <!--        android:layout_marginTop="6dp"-->
+                        <!--        android:layout_marginEnd="16dp"-->
+
+                        <!--        android:layout_marginStart="16dp"-->
+                        <!--        android:layout_marginTop="6dp"-->
+                        <!--        android:layout_marginEnd="16dp"-->
+                        <!--        android:paddingTop="4dp"-->
+                        <!--        android:paddingBottom="4dp"-->
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/searchChiledContainer"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:background="@drawable/all_round_black_with_round_stroke"
+                            android:padding="6dp"
+                            app:layout_constraintHorizontal_chainStyle="packed"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <!--                android:layout_marginStart="15dp"-->
+                            <!--                android:layout_marginEnd="15dp"-->
+
+
+                            <!--        android:backgroundTint="#4DF3D27A"-->
+
+                            <!--        android:layout_marginStart="16dp"-->
+                            <!--        android:layout_marginTop="6dp"-->
+                            <!--        android:layout_marginEnd="16dp"-->
+                            <!--        android:paddingTop="4dp"-->
+                            <!--        android:paddingBottom="4dp"-->
+                            <!--        app:layout_constraintEnd_toEndOf="parent"-->
+
+                            <ImageView
+                                android:id="@+id/interestsIcon"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_marginStart="8dp"
+                                android:contentDescription="@string/app_name"
+                                android:padding="4dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+
+                                app:srcCompat="@drawable/ic_search_inactive"
+                                app:tint="@color/white" />
+
+                            <EditText
+                                android:id="@+id/keyInput"
+                                android:layout_width="0dp"
+                                android:layout_height="45dp"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginEnd="16dp"
+                                android:backgroundTint="@color/white"
+                                android:fontFamily="sans-serif"
+                                android:hint="@string/search_user_by_name"
+                                android:imeOptions="actionSearch"
+                                android:singleLine="true"
+                                android:textColor="@color/white"
+                                android:textColorHint="@color/white_five"
+                                android:textSize="16sp"
+                                android:textStyle="normal"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/icon_send_message"
+                                app:layout_constraintStart_toEndOf="@id/interestsIcon"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <!--        android:textColor="@color/search_text"-->
+                            <!--        android:textColorHint="#000000"-->
+
+                            <!--            app:layout_constraintEnd_toEndOf="parent"-->
+
+                            <ImageView
+                                android:id="@id/icon_send_message"
+                                android:layout_width="35dp"
+                                android:layout_height="35dp"
+                                android:layout_marginEnd="6dp"
+                                android:contentDescription="@string/app_name"
+                                android:src="@drawable/icon_send_message_chet"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                        <ImageButton
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:background="@null"
+                            android:padding="7dp"
+                            android:scaleType="fitXY"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@+id/searchChiledContainer"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/search_filter" />
+                        <!--            android:layout_marginEnd="15dp"-->
+
+                        <!--        android:layout_marginStart="8dp"-->
+                        <!--            android:layout_marginStart="5dp"-->
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!--            tools:listitem="@layout/list_item_unlock_feature" />-->
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/usersRecyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="visible"
+                        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:spanCount="2"
+                        tools:listitem="@layout/list_item_searched_user" />
+
+                    <LinearLayout
+                        android:id="@+id/unlockLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/_5sdp"
+                        android:visibility="visible"
+                        android:weightSum="2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/usersRecyclerView">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.2"
+                            android:orientation="vertical">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="start"
+                                android:text="@{String.valueOf(stringConstant.unlock)}"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_17sdp" />
+                            <!--                            android:text="@string/unlock"-->
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="start"
+                                android:text="@{String.valueOf(stringConstant.to_view_more_profile)}"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_14sdp" />
+                            <!--                            android:text="@string/to_view_more_profile"-->
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_1sdp"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:background="@color/white" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/llButtonUnLock"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="@dimen/_5sdp"
+                            android:layout_weight=".8"
+                            android:gravity="right|center"
+                            android:orientation="horizontal">
+                            <!--                            android:visibility="@{vm.data.user.userSubscription.isActive() ? View.GONE : View.VISIBLE}"-->
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_2sdp"
+                                android:layout_marginRight="@dimen/_12sdp"
+                                android:background="@drawable/chat_button_gradiant"
+                                android:drawableLeft="@drawable/subscription"
+                                android:drawablePadding="10dp"
+                                android:elevation="10dp"
+                                android:fontFamily="sans-serif-medium"
+                                android:gravity="center"
+                                android:paddingStart="10dp"
+                                android:paddingTop="8dp"
+                                android:paddingEnd="10dp"
+                                android:paddingBottom="8dp"
+                                android:text="@{String.valueOf(stringConstant.unlock)}"
+                                android:textAllCaps="false"
+                                android:textColor="@color/black"
+                                android:textSize="@dimen/_12sdp" />
+                            <!--                            android:text="@string/unlock"-->
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/usersLockRecyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="visible"
+                        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/unlockLayout"
+                        app:spanCount="2"
+                        tools:listitem="@layout/list_item_lock_searched_user" />
+
+
+                    <LinearLayout
+                        android:id="@+id/noUsersLabel"
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical"
+                        android:visibility="invisible"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginBottom="20dp"
+                            android:contentDescription="@string/app_name"
+                            android:src="@mipmap/ic_launcher" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:text="@{String.valueOf(stringConstant.no_users_found_message)}"
+                            android:textColor="@color/colorPrimary" />
+                        <!--                        android:text="@string/no_users_found_message"-->
+
+                    </LinearLayout>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <ImageButton
+            android:id="@+id/filterButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_20sdp"
+            android:background="@null"
+            android:padding="7dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/filter" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

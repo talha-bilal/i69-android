@@ -1,0 +1,9 @@
+mutation StripeCreateIntent($amount: Float!, $currency: String!,$paymentMethodType: String!){
+
+		stripeCreateIntent(amount: $amount, currency: $currency,paymentMethodType: $paymentMethodType){
+
+			clientSecret
+		}
+
+
+}

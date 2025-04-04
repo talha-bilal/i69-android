@@ -1,0 +1,9 @@
+query GetPaymentMethods{
+
+		getPaymentMethods{
+		
+			paymentMethod 
+			isAllowed 
+		}
+
+}

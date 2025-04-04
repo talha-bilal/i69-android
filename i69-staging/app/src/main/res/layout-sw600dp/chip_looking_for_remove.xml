@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/_150sdp"
+    android:layout_height="@dimen/_20sdp">
+
+
+    <RelativeLayout
+        android:id="@+id/liear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/transp_background"
+        android:orientation="horizontal"
+        android:padding="@dimen/_5sdp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tx1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_toStartOf="@+id/tx2"
+            android:fontFamily="sans-serif"
+            android:text="Chip Test"
+            android:textAllCaps="false"
+            android:textColor="#FBFBAB"
+            android:textSize="@dimen/_7ssp"
+            android:textStyle="bold"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tx2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center|end"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:background="@drawable/myprofile_tags_bg"
+            android:fontFamily="sans-serif"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="Chip Test"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_7ssp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/ivClear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center"
+        android:layout_marginStart="5dp"
+        android:layout_toRightOf="@+id/liear"
+        android:layout_weight="0.05"
+        android:padding="2dp"
+        android:src="@drawable/union_cross"
+        android:visibility="visible" />
+</LinearLayout>

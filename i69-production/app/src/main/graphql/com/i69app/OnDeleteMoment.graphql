@@ -1,0 +1,7 @@
+subscription OnDeleteMoment($moderatorId: String!,$token: String!){
+
+    onDeleteMoment(moderatorId: $moderatorId,token: $token){
+            id
+    }
+
+}

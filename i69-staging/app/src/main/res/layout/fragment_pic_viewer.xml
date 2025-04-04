@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/roots"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black">
+
+        <ImageView
+            android:id="@+id/imgUserStory"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_default_user"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="0dp" />
+
+        <RelativeLayout
+            android:id="@+id/videoLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible">
+            <androidx.media3.ui.PlayerView
+                android:id="@+id/videoview"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                app:use_controller="false"
+                android:visibility="visible" />
+            <View
+                android:id="@+id/videoDisable"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/trans"
+                android:visibility="visible" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_play"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_baseline_play_circle_outline_24"
+                android:tint="@color/colorPrimary"
+                app:tint="@color/colorPrimary"
+                android:visibility="gone"/>
+
+            <com.google.android.material.slider.RangeSlider
+                android:id="@+id/progressBar1"
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="10dp"
+                android:clickable="false"
+                android:focusable="false"
+                android:focusableInTouchMode="true"
+                android:padding="0dp"
+                android:stepSize="1.0"
+                app:thumbColor="@color/colorPrimary"
+                app:thumbRadius="@dimen/_6sdp"
+                app:tickVisible="false"
+                android:visibility="gone"
+                app:trackColorActive="@color/white"
+                app:trackColorInactive="@color/black"
+                app:trackHeight="@dimen/_5sdp" />
+
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:id="@+id/progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                app:indicatorColor="@color/colorPrimary"
+                android:layout_centerInParent="true"
+                android:visibility="gone"
+                style="@style/Widget.MaterialComponents.CircularProgressIndicator.Medium"/>
+        </RelativeLayout>
+        <ImageView
+            android:id="@+id/img_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="@string/app_name"
+            android:padding="@dimen/_5sdp"
+            android:src="@drawable/ic_cross_close"
+            app:tint="@color/white" />
+    </RelativeLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

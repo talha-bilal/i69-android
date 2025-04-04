@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.i69.ui.viewModels.MarketPlacesViewModel" />
+
+        <variable
+            name="stringConstant"
+            type="com.i69.applocalization.AppStringConstant" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@drawable/search_toolbar_graient"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/actionBack1"
+                android:layout_width="23dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:background="?selectableItemBackgroundBorderless"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/baseline_arrow_back_ios_new_24"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txtProductName"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="6dp"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center_vertical"
+                android:letterSpacing="0.1"
+                android:maxLines="1"
+                android:text="@string/cart"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_11sdp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/bell"
+                app:layout_constraintStart_toEndOf="@+id/toolbarLogo"
+                app:layout_constraintTop_toTopOf="parent" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerCartItems"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/cart_item" />
+
+        <TextView
+            android:id="@+id/proceedToPayment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/_5sdp"
+            android:background="@drawable/follow_middle"
+            android:paddingLeft="@dimen/_45sdp"
+            android:paddingTop="@dimen/_5sdp"
+            android:paddingRight="@dimen/_45sdp"
+            android:paddingBottom="@dimen/_6sdp"
+            android:text="@string/proceed_to_payment"
+            android:textSize="@dimen/_14sdp"
+            android:textStyle="bold" />
+    </LinearLayout>
+</layout>

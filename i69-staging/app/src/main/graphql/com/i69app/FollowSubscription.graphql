@@ -1,0 +1,25 @@
+subscription FollowSubscription {
+
+    followSubscription{
+        profileFollow {
+            id
+			createdAt
+			follower
+					{
+					 username
+
+					 fullName
+					 id
+					 email
+					}
+			following{
+					 username
+					 fullName
+					 id
+					 email
+					}
+        }
+        
+       
+    }
+}

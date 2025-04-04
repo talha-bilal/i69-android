@@ -1,0 +1,69 @@
+query GetAllPackages {
+
+    allPackages {
+        id
+		name
+		description
+		permissions {
+						id
+
+						description
+						userFreeLimit
+
+					}
+		planSet		{
+						id
+						title
+						priceInCoins
+						isOnDiscount
+						isActive
+
+						dicountedPriceInCoins
+						createdAt
+						updatedAt
+		
+					}
+		package {
+		
+				id
+				package {
+							id
+							name
+							description
+							
+						
+						}
+				permission{
+				
+							id
+							description
+							userFreeLimit
+						  }
+				
+				perDay
+				perWeek
+				perMonth
+				isUnlimited
+				}
+		plans {
+						id
+						title
+						priceInCoins
+						isOnDiscount
+						isActive
+
+						dicountedPriceInCoins
+						createdAt
+						updatedAt
+						package{
+							id
+							name
+							description
+							
+						
+						}
+		
+			 }
+    }
+
+}

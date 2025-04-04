@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/roots"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/ct_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black">
+
+        <ImageView
+            android:id="@+id/imgUserStory"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/app_name"
+            android:scaleType="fitCenter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="0dp" />
+
+<!--        android:src="@drawable/dummy_shared_moment"-->
+        <LinearLayout
+            android:id="@+id/linearLayoutForClick"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutLeft"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:elevation="@dimen/_10sdp" />
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutCenter"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:elevation="@dimen/_10sdp" />
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutRight"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:elevation="@dimen/_10sdp" />
+        </LinearLayout>
+
+        <androidx.media3.ui.PlayerView
+            android:id="@+id/player_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:visibility="gone"
+            app:use_controller="false" />
+
+        <ImageView
+            android:id="@+id/iv_pause"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_centerInParent="true"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_action_playcircle"
+            android:visibility="gone" />
+
+        <!--        <VideoView-->
+        <!--            android:visibility="gone"-->
+
+        <!--            android:id="@+id/videoView"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="match_parent"-->
+        <!--            app:layout_constraintTop_toBottomOf="@+id/progressBar1"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent"/>-->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@color/storyTopBackground" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/gradiant2"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/user_coment_like_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <LinearLayout
+                    android:id="@+id/likes_l"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="0.8"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/imgNearbyUserLikes"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center_vertical"
+                            android:contentDescription="@string/app_name"
+                            android:padding="6dp"
+                            android:src="@drawable/icon_like" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/lblItemNearbyUserLikeCount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center|center_horizontal"
+                            android:layout_marginTop="3dp"
+                            android:fontFamily="sans-serif-light"
+                            android:text="0"
+                            android:textAllCaps="false"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                    </FrameLayout>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/txtNearbyUserLike"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="sans-serif-light"
+                        android:gravity="center"
+                        android:text="@string/like"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                    <!--                android:text="Like"-->
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/comment_l"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="1.2"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:id="@+id/imgNearbyUserComment"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center_vertical"
+                            android:padding="7dp"
+                            android:src="@drawable/icon_comment" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/lblItemNearbyCommentCount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center|center_horizontal"
+                            android:layout_marginBottom="2dp"
+                            android:fontFamily="sans-serif-light"
+                            android:text="0"
+                            android:textAllCaps="false"
+                            android:textColor="@color/black"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                    </FrameLayout>
+
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/lblItemNearbyUserCommentCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="sans-serif-light"
+                        android:gravity="center_vertical"
+                        android:text="@string/comments"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                    <!--                android:text="Comments"-->
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/gift_l"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imgNearbyUserGift"
+                        android:layout_width="38dp"
+                        android:layout_height="38dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="10dp"
+                        android:padding="7dp"
+                        android:src="@drawable/icon_gifts" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/lblItemNearbyUserGiftTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="sans-serif-light"
+                        android:gravity="center"
+                        android:text="@string/send_gift"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+                <!--            <LinearLayout-->
+                <!--                android:id="@+id/report_l"-->
+                <!--                android:layout_width="wrap_content"-->
+                <!--                android:layout_height="wrap_content"-->
+                <!--                android:layout_gravity="center_vertical"-->
+                <!--                android:layout_marginStart="5dp"-->
+                <!--                android:gravity="center_vertical"-->
+                <!--                android:visibility="gone"-->
+                <!--                android:orientation="horizontal">-->
+
+                <!--                <ImageView-->
+                <!--                    android:id="@+id/imgReport"-->
+                <!--                    android:layout_width="38dp"-->
+                <!--                    android:layout_height="38dp"-->
+                <!--                    android:layout_gravity="center_vertical"-->
+                <!--                    android:layout_marginStart="10dp"-->
+                <!--                    android:padding="7dp"-->
+                <!--                    android:src="@drawable/ic_more_vert_24" />-->
+
+                <!--&lt;!&ndash;                <com.google.android.material.textview.MaterialTextView&ndash;&gt;-->
+                <!--&lt;!&ndash;                    android:id="@+id/lblItemNearbyUserGiftTitle"&ndash;&gt;-->
+                <!--&lt;!&ndash;                    android:layout_width="wrap_content"&ndash;&gt;-->
+                <!--&lt;!&ndash;                    android:layout_height="wrap_content"&ndash;&gt;-->
+                <!--&lt;!&ndash;                    android:layout_gravity="center_vertical"&ndash;&gt;-->
+                <!--&lt;!&ndash;                    android:fontFamily="sans-serif-light"&ndash;&gt;-->
+                <!--&lt;!&ndash;                    android:gravity="center"&ndash;&gt;-->
+                <!--&lt;!&ndash;                    android:text="@string/itemdreport"&ndash;&gt;-->
+                <!--&lt;!&ndash;                    android:textAllCaps="false"&ndash;&gt;-->
+                <!--&lt;!&ndash;                    android:textColor="@color/white"&ndash;&gt;-->
+                <!--&lt;!&ndash;                    android:textSize="14sp"&ndash;&gt;-->
+                <!--&lt;!&ndash;                    android:textStyle="bold" />&ndash;&gt;-->
+
+
+                <!--            </LinearLayout>-->
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/likes_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="10dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/txtUserLike"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:fontFamily="sans-serif-light"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="@string/viwe_all_likes"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <ProgressBar
+            android:id="@+id/progressBar1"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:max="3000"
+            android:padding="0dp"
+            android:progress="0"
+            android:progressBackgroundTint="@color/black"
+            android:progressTint="@color/white"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/linear_progressbars"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/progressBar1"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linear_progressbars"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/userPic"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/background_circle_button_unchecked"
+                android:contentDescription="@string/app_name"
+                android:padding="1dp"
+                android:src="@drawable/dummy_profile"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/lblName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="sans-serif"
+                android:gravity="start"
+                android:text="@string/lorem_username"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textDirection="locale"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/img_close"
+                app:layout_constraintStart_toEndOf="@+id/userPic"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/img_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="@string/app_name"
+                android:padding="@dimen/_5sdp"
+                android:src="@drawable/ic_cross_close"
+                app:layout_constraintBottom_toBottomOf="@+id/lblName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/lblName"
+                app:tint="@color/white" />
+
+            <!--            <ImageView-->
+            <!--                android:id="@+id/delete_story"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginTop="10dp"-->
+            <!--                android:contentDescription="@string/app_name"-->
+            <!--                android:src="@drawable/ic_delete_icon"-->
+            <!--                android:visibility="visible"-->
+            <!--                app:layout_constraintStart_toStartOf="@id/img_close"-->
+            <!--                app:layout_constraintEnd_toEndOf="@id/img_close"-->
+            <!--                app:layout_constraintTop_toBottomOf="@+id/img_close"-->
+            <!--                app:tint="@color/white" />-->
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txtTimeAgo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:gravity="center"
+                android:text="@string/lorem_33_minutes_ago"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/lblName"
+                app:layout_constraintTop_toBottomOf="@+id/lblName" />
+
+
+            <LinearLayout
+                android:id="@+id/report_l"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="@id/img_close"
+                app:layout_constraintStart_toStartOf="@id/img_close"
+                app:layout_constraintTop_toBottomOf="@+id/img_close">
+
+                <!--                app:layout_constraintTop_toTopOf="@+id/lblName"-->
+
+                <ImageView
+                    android:id="@+id/delete_story"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/app_name"
+                    android:padding="@dimen/_5sdp"
+                    android:src="@drawable/ic_delete_icon"
+                    android:visibility="gone"
+                    app:tint="@color/white" />
+
+                <ImageView
+                    android:id="@+id/imgReport"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="10dp"
+                    android:padding="@dimen/_5sdp"
+                    android:src="@drawable/ic_more_vert_24"
+                    android:visibility="gone"
+                    app:tint="@color/white" />
+                <!--                android:padding="7dp"-->
+
+                <!--                <com.google.android.material.textview.MaterialTextView-->
+                <!--                    android:id="@+id/lblItemNearbyUserGiftTitle"-->
+                <!--                    android:layout_width="wrap_content"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_gravity="center_vertical"-->
+                <!--                    android:fontFamily="sans-serif-light"-->
+                <!--                    android:gravity="center"-->
+                <!--                    android:text="@string/itemdreport"-->
+                <!--                    android:textAllCaps="false"-->
+                <!--                    android:textColor="@color/white"-->
+                <!--                    android:textSize="14sp"-->
+                <!--                    android:textStyle="bold" />-->
+
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <include layout="@layout/bottom_sheet_layout" />
+
+    <include layout="@layout/bottom_sheet_layout1" />
+
+    <include layout="@layout/bottom_sheet_layout2" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/receivedGiftBottomSheet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bottom_bg"
+        app:behavior_hideable="true"
+        app:behavior_peekHeight="0dp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivGiftIcon"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginTop="16dp"
+                android:layout_toStartOf="@+id/txtMomentRecentComment"
+                android:src="@drawable/icon_gifts" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txtMomentRecentComment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="sans-serif-light"
+                android:gravity="center"
+                android:text="@string/gifts"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <FrameLayout
+                android:id="@+id/receivedGiftContainer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/txtMomentRecentComment"
+                android:layout_marginTop="@dimen/_4sdp" />
+
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

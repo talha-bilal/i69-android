@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="market_place">Market Place</string>
+    <string name="search_product">Search Product</string>
+    <string name="select_category">Select Category</string>
+    <string name="price_range">Price Range</string>
+    <string name="popular_category">Popular Category</string>
+    <string name="woomen_cloth">Women\'s clothing</string>
+    <string name="watches">Watches</string>
+    <string name="bags">Bag\'s</string>
+    <string name="men_cloth">Men\'s Clothing</string>
+    <string name="school_office">School and Office Suppliers</string>
+    <string name="sport_outdoor">Sports and Outdoors</string>
+    <string name="household_appliaces">HouseHold Appliances</string>
+    <string name="jwellery">Jewelry and Accessories</string>
+    <string name="automobile">Automobile and two-wheelers</string>
+    <string name="cart">Cart</string>
+</resources>

@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="stringConstant"
+            type="com.i69.applocalization.AppStringConstant" />
+
+        <variable
+            name="model"
+            type="com.i69.ui.viewModels.MarketPlacesViewModel" />
+
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/background">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/searchToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@drawable/search_toolbar_graient"
+                android:elevation="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/toolbarHamburger"
+                    android:layout_width="64dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:background="?selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/menu_icons"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/toolbarLogo"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:contentDescription="@string/app_name"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_toolbar_69_navigate_up_dark"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/toolbarHamburger"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:letterSpacing="0.2"
+                    android:text="@string/market_place"
+                    android:textAllCaps="true"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/toolbarLogo"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/SearchLL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="75dp"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:weightSum="10"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/toolbarLogo"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <EditText
+                        android:id="@+id/keyInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_weight="7"
+                        android:background="@null"
+                        android:backgroundTint="@color/white"
+                        android:fontFamily="sans-serif"
+                        android:hint="@string/search_product"
+                        android:imeOptions="actionSearch"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/gray"
+                        android:textSize="16sp"
+                        android:textStyle="normal" />
+
+                    <!-- android:hint="Search Product"-->
+                    <ImageView
+                        android:id="@+id/cross"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:background="?selectableItemBackgroundBorderless"
+                        android:contentDescription="@string/app_name"
+                        android:padding="12dp"
+                        android:src="@drawable/cross" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/actionIconLL"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/searchtIV"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="?selectableItemBackgroundBorderless"
+                        android:contentDescription="@string/app_name"
+                        android:padding="12dp"
+                        android:src="@drawable/search" />
+
+                    <ImageView
+                        android:id="@+id/imageSearchIV"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="?selectableItemBackgroundBorderless"
+                        android:contentDescription="@string/app_name"
+                        android:padding="12dp"
+                        android:src="@drawable/lens" />
+
+                </LinearLayout>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/counter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_marginEnd="@dimen/_5sdp"
+                    android:background="@drawable/circular_border"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="@color/black"
+                    android:textSize="10sp"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/actionIconLL" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <RelativeLayout
+                android:id="@+id/scroll_view1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="?attr/actionBarSize"
+                android:fillViewport="true"
+                android:scrollbars="none"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/_7sdp"
+                        android:weightSum="10">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="5">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:id="@+id/categoryLL"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/all_round_with_round_white_stroke"
+                                    android:orientation="horizontal"
+                                    android:paddingStart="@dimen/_12sdp"
+                                    android:paddingEnd="@dimen/_2sdp">
+
+                                    <TextView
+                                        android:id="@+id/txtCategoryName"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_weight="1"
+                                        android:maxLines="1"
+                                        android:text="@string/select_category"
+                                        android:textColor="@color/white"
+                                        android:textSize="14sp" />
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:layout_width="@dimen/_30sdp"
+                                        android:layout_height="@dimen/_30sdp"
+                                        android:padding="10sp"
+                                        android:src="@drawable/arrow_down" />
+
+                                </LinearLayout>
+
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="5"
+                            android:gravity="end">
+
+                            <androidx.appcompat.widget.LinearLayoutCompat
+                                android:id="@+id/layPriceRange"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/all_round_with_round_white_stroke"
+                                android:orientation="horizontal"
+                                android:paddingStart="@dimen/_2sdp"
+                                android:paddingEnd="@dimen/_12sdp">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:layout_width="@dimen/_30sdp"
+                                    android:layout_height="@dimen/_30sdp"
+                                    android:padding="10sp"
+                                    android:src="@drawable/ic_filter_market" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:text="@string/price_range"
+                                    android:textColor="@color/white"
+                                    android:textSize="14sp" />
+                            </androidx.appcompat.widget.LinearLayoutCompat>
+                        </LinearLayout>
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recyclerViewMarket"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:background="@color/C203c41"
+                            android:padding="@dimen/_2sdp"
+                            tools:listitem="@layout/list_item_market_home" />
+
+                    </RelativeLayout>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </RelativeLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

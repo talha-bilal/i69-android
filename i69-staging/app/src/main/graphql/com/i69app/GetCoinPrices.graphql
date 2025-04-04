@@ -1,0 +1,17 @@
+query GetCoinPrices {
+
+    allCoinPrices {
+        data {
+            edges {
+                cursor
+                node {
+                    coinsCount
+                    originalPrice
+                    discountedPrice
+                    currency
+                }
+            }
+        }
+    }
+
+}

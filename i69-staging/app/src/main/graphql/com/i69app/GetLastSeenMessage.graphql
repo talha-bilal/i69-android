@@ -1,0 +1,10 @@
+mutation GetLastSeenMessage($roomId: Int!){
+
+    lastSeenMessage(roomId: $roomId){
+       message {
+           id
+           content
+       }
+    }
+
+}

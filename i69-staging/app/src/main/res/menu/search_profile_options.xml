@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group android:id="@+id/groupReport">
+    <item
+        android:id="@+id/nav_item_report"
+        app:showAsAction="collapseActionView"
+        android:title="@string/itemdreport" />
+    </group>
+    <group android:id="@+id/groupBlock">
+    <item
+        app:showAsAction="collapseActionView"
+        android:id="@+id/nav_item_block"
+        android:title="@string/itemblock" />
+    </group>
+</menu>

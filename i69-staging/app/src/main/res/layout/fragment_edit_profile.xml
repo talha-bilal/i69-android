@@ -1,0 +1,1000 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:chipcloud="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="user"
+            type="com.i69.data.models.User" />
+
+        <variable
+            name="defaultPicker"
+            type="com.i69.data.remote.responses.DefaultPicker" />
+
+
+        <variable
+            name="stringConstant"
+            type="com.i69.applocalization.AppStringConstant" />
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/toolbar_color">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/titleLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:fontFamily="sans-serif"
+                android:letterSpacing="0.2"
+                android:text="@{String.valueOf(stringConstant.profile_edit_title)}"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+            <!--                android:text="@string/profile_edit_title"-->
+        </androidx.appcompat.widget.Toolbar>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_marginLeft="@dimen/default_padding"
+            android:layout_marginRight="@dimen/default_padding"
+            android:background="@color/iconGray"
+            android:visibility="gone" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/photosRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fadingEdge="horizontal"
+            android:fadingEdgeLength="@dimen/small_padding"
+            android:orientation="horizontal"
+            android:requiresFadingEdge="horizontal|vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/button_add_photo_layout" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:alpha="0.46"
+            android:background="@drawable/shadow" />
+
+        <ScrollView
+            android:id="@+id/scrollContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/default_padding"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="@dimen/default_padding"
+                    android:orientation="vertical"
+                    android:paddingStart="@dimen/default_padding"
+                    android:paddingEnd="@dimen/default_padding">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_name_title"
+                        style="@style/MediumTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{String.valueOf(stringConstant.name_label)}" />
+                    <!--                android:text="@string/name_label"-->
+
+                    <EditText
+                        android:id="@+id/editProfileName"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/edit_text_height"
+                        android:background="@null"
+                        android:fontFamily="sans-serif-light"
+                        android:hint="@{String.valueOf(stringConstant.name_hint)}"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:singleLine="true"
+                        android:maxLength="15"
+                        android:text="@={user.fullName}"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/edit_profile_text_hint_gray"
+                        android:textSize="20sp"
+                        android:textStyle="normal" />
+                    <!--                android:hint="@string/name_hint"-->
+                </LinearLayout>
+
+                <View
+                    style="@style/DividerBlack"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginLeft="@dimen/default_padding"
+                    android:layout_marginRight="@dimen/default_padding" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/default_padding"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="@dimen/default_padding"
+                    android:orientation="vertical"
+                    android:paddingStart="@dimen/default_padding"
+                    android:paddingEnd="@dimen/default_padding">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_about_title"
+                        style="@style/MediumTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{String.valueOf(stringConstant.about)}" />
+                    <!--                android:text="@string/about"-->
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/edAbout"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:background="@null"
+                            android:fontFamily="sans-serif-light"
+                            android:hint="@{String.valueOf(stringConstant.about_description)}"
+                            android:imeOptions="actionDone"
+                            android:inputType="textMultiLine"
+                            android:maxLength="250"
+                            android:maxLines="5"
+                            android:text="@={user.about}"
+                            android:textColor="@color/white"
+                            android:textColorHint="@color/edit_profile_text_hint_gray"
+                            android:textSize="20sp"
+                            android:textStyle="normal"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                        <!--                    android:hint="@string/about_description"-->
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                </LinearLayout>
+
+                <View
+                    style="@style/DividerBlack"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginLeft="@dimen/default_padding"
+                    android:layout_marginRight="@dimen/default_padding" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tv_about_title_count"
+                    style="@style/MediumTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginRight="@dimen/_16sdp"
+                    android:text="0/250" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/default_padding"
+                    android:layout_marginTop="@dimen/default_padding"
+                    android:layout_marginRight="@dimen/default_padding"
+                    android:orientation="vertical"
+                    android:paddingStart="@dimen/small_padding"
+                    android:paddingEnd="@dimen/default_padding">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_gender_title"
+                        style="@style/MediumTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/small_padding"
+                        android:text="@{String.valueOf(stringConstant.gender_label)}" />
+                    <!--                android:text="@string/gender_label"-->
+
+                    <com.i69.ui.views.NoDefaultSpinner
+                        android:id="@+id/genderPicker"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/edit_text_height"
+                        android:background="@null"
+                        android:prompt="@{String.valueOf(stringConstant.enter_your_gender)}"
+                        android:textSize="20sp"
+                        app:defaultPicker="@{defaultPicker.genderPicker}"
+                        app:itemsHeightGenderRes="@{true}"
+                        app:genderSpinnerSelectedValue="@{user.gender}" />
+                    <!--                    app:defaultPicker="@{defaultPicker.genderPicker}"-->
+
+                    <!--                    <com.i69app.ui.views.NoDefaultSpinner-->
+                    <!--                        android:id="@+id/genderPicker"-->
+                    <!--                        android:layout_width="match_parent"-->
+                    <!--                        android:layout_height="@dimen/edit_text_height"-->
+                    <!--                        android:background="@null"-->
+                    <!--                        android:prompt="@{String.valueOf(stringConstant.enter_your_gender)}"-->
+                    <!--                        android:textSize="20sp"-->
+                    <!--                        app:defaultPicker="@{defaultPicker.genderPicker}"-->
+                    <!--                        app:itemsHeightGenderRes="@{true}"-->
+                    <!--                        app:spinnerSelectedValue="@={user.gender}" />-->
+                    <!--app:defaultPicker="@{null}"
+                    app:defaultPicker="@{defaultPicker.genderPicker}"
+                        app:itemsHeightGenderRes="@{true}"-->
+                    <!--                android:prompt="@string/enter_your_gender"-->
+
+                </LinearLayout>
+
+                <View
+                    style="@style/DividerBlack"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginLeft="@dimen/default_padding"
+                    android:layout_marginRight="@dimen/default_padding" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/default_padding"
+                    android:layout_marginTop="@dimen/default_padding"
+                    android:layout_marginRight="@dimen/default_padding"
+                    android:orientation="vertical"
+                    android:paddingStart="@dimen/small_padding"
+                    android:paddingEnd="@dimen/default_padding">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_age_title"
+                        style="@style/MediumTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/small_padding"
+                        android:text="@{String.valueOf(stringConstant.age_label)}" />
+                    <!--                android:text="@string/age_label"-->
+                    <com.i69.ui.views.NoDefaultSpinner
+                        android:id="@+id/agePicker"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/edit_text_height"
+                        android:background="@null"
+                        android:prompt="@{String.valueOf(stringConstant.enter_your_age)}"
+                        android:textSize="20sp"
+                        app:defaultPicker="@{defaultPicker.agePicker}"
+                        app:spinnerItems="@{defaultPicker.agePicker}"
+                        app:spinnerSelectedValue="@={user.age}" />
+                    <!--                android:prompt="@string/enter_your_age"-->
+                </LinearLayout>
+
+                <View
+                    style="@style/DividerBlack"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginLeft="@dimen/default_padding"
+                    android:layout_marginRight="@dimen/default_padding" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/default_padding"
+                    android:layout_marginTop="@dimen/default_padding"
+                    android:layout_marginRight="@dimen/default_padding"
+                    android:orientation="vertical"
+                    android:paddingStart="@dimen/small_padding"
+                    android:paddingEnd="@dimen/default_padding">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_height_title"
+                        style="@style/MediumTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/small_padding"
+                        android:text="@{String.valueOf(stringConstant.height_label)}" />
+                    <!--                android:text="@string/height_label"-->
+
+                    <com.i69.ui.views.NoDefaultSpinner
+                        android:id="@+id/heightsPicker"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/edit_text_height"
+                        android:background="@null"
+                        android:prompt="@{String.valueOf(stringConstant.enter_your_height)}"
+                        android:textSize="20sp"
+                        app:defaultPicker="@{defaultPicker.heightsPicker}"
+                        app:spinnerItems="@{defaultPicker.heightsPicker}"
+                        app:spinnerSelectedValue="@={user.height}" />
+                    <!--                android:prompt="@string/enter_your_height"-->
+                </LinearLayout>
+
+                <View
+                    style="@style/DividerBlack"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginLeft="@dimen/default_padding"
+                    android:layout_marginRight="@dimen/default_padding" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/default_padding"
+                    android:layout_marginTop="@dimen/default_padding"
+                    android:layout_marginRight="@dimen/default_padding"
+                    android:orientation="vertical"
+                    android:paddingStart="@dimen/default_padding"
+                    android:paddingEnd="@dimen/default_padding">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_work_title"
+                        style="@style/MediumTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{String.valueOf(stringConstant.work_label)}" />
+                    <!--                android:text="@string/work_label"-->
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/edit_text_height"
+                        android:background="@null"
+                        android:fontFamily="sans-serif-light"
+                        android:hint="@{String.valueOf(stringConstant.work_hint)}"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLength="35"
+                        android:singleLine="true"
+                        android:text="@={user.work}"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/edit_profile_text_hint_gray"
+                        android:textSize="20sp"
+                        android:textStyle="normal" />
+                    <!--                android:hint="@string/work_hint"-->
+                </LinearLayout>
+
+
+                <View
+                    style="@style/DividerBlack"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginLeft="@dimen/default_padding"
+                    android:layout_marginRight="@dimen/default_padding" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/default_padding"
+                    android:layout_marginTop="@dimen/default_padding"
+                    android:layout_marginRight="@dimen/default_padding"
+                    android:orientation="vertical"
+                    android:paddingStart="@dimen/default_padding"
+                    android:paddingEnd="@dimen/default_padding">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_education_title"
+                        style="@style/MediumTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{String.valueOf(stringConstant.education_label)}" />
+
+                    <!--                android:text="@string/education_label"-->
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/edit_text_height"
+                        android:background="@null"
+                        android:fontFamily="sans-serif-light"
+                        android:hint="@{String.valueOf(stringConstant.education_hint)}"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:singleLine="true"
+                        android:text="@={user.education}"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/edit_profile_text_hint_gray"
+                        android:textSize="20sp"
+                        android:textStyle="normal" />
+                    <!--                android:hint="@string/education_hint"-->
+                </LinearLayout>
+
+
+                <View
+                    style="@style/DividerBlack"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginLeft="@dimen/default_padding"
+                    android:layout_marginRight="@dimen/default_padding" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/default_padding"
+                    android:layout_marginTop="@dimen/default_padding"
+                    android:layout_marginRight="@dimen/default_padding"
+                    android:orientation="vertical"
+                    android:paddingStart="@dimen/small_padding"
+                    android:paddingEnd="@dimen/default_padding">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_familplan_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/small_padding"
+                        android:fontFamily="sans-serif"
+                        android:text="@{String.valueOf(stringConstant.family_plans_label)}"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/label_text_size"
+                        android:textStyle="bold" />
+                    <!--                android:text="@string/family_plans_label"-->
+
+                    <com.i69.ui.views.NoDefaultSpinner
+                        android:id="@+id/familyPlansPicker"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/edit_text_height"
+                        android:layout_marginBottom="12dp"
+                        android:background="@null"
+                        android:prompt="@{String.valueOf(stringConstant.enter_your_family_plans)}"
+                        android:textSize="20sp"
+                        app:defaultPicker="@{defaultPicker.familyPicker}"
+                        app:spinnerItems="@{defaultPicker.familyPicker}"
+                        app:spinnerSelectedValue="@={user.familyPlans}" />
+                    <!--                android:prompt="@string/enter_your_family_plans"-->
+
+                </LinearLayout>
+
+                <View
+                    style="@style/DividerBlack"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginLeft="@dimen/default_padding"
+                    android:layout_marginRight="@dimen/default_padding" />
+
+                <LinearLayout
+                    android:id="@+id/languagesLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/default_padding"
+                    android:layout_marginTop="@dimen/default_padding"
+                    android:layout_marginRight="@dimen/default_padding"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layoutDirection='ltr'
+                    android:orientation="vertical"
+                    android:paddingStart="@dimen/small_padding"
+                    android:paddingEnd="@dimen/default_padding">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_language_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/small_padding"
+                        android:fontFamily="sans-serif"
+                        android:text="@{String.valueOf(stringConstant.language)}"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/label_text_size"
+                        android:textStyle="bold" />
+                    <!--                android:text="@string/language"-->
+                    <com.i69.ui.views.NoDefaultSpinner
+                        android:id="@+id/language_spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/edit_text_height"
+                        android:layout_marginBottom="12dp"
+                        android:background="@null"
+                        android:prompt="@{String.valueOf(stringConstant.language)}"
+                        android:spinnerMode="dialog"
+                        android:textSize="20sp" />
+                    <!--                android:prompt="@string/language"-->
+                </LinearLayout>
+
+                <View
+                    style="@style/DividerBlack"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginLeft="@dimen/default_padding"
+                    android:layout_marginRight="@dimen/default_padding" />
+
+                <LinearLayout
+                    android:id="@+id/intersetedInLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/default_padding"
+                    android:layout_marginTop="@dimen/default_padding"
+                    android:layout_marginRight="@dimen/default_padding"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layoutDirection='ltr'
+                    android:orientation="vertical"
+                    android:paddingStart="@dimen/small_padding"
+                    android:paddingEnd="@dimen/default_padding">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_interset_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/small_padding"
+                        android:fontFamily="sans-serif"
+                        android:text="@{String.valueOf(stringConstant.interested_in)}"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/label_text_size"
+                        android:textStyle="bold" />
+
+                    <com.i69.ui.views.chipcloud.ChipCloudNewwithRemove
+                        android:id="@+id/userLookingForChipsCloudLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+                        app:layout_constraintVertical_bias="0.0"
+                        chipcloud:allCaps="false"
+                        chipcloud:deselectTransitionMS="10"
+                        chipcloud:deselectedFontColor="@color/colorPrimary"
+                        chipcloud:gravity="left"
+                        chipcloud:minHorizontalSpacing="10dp"
+                        chipcloud:selectMode="none"
+                        chipcloud:selectTransitionMS="0"
+                        chipcloud:selectedFontColor="@color/colorPrimaryDark"
+                        chipcloud:textSize="12sp"
+                        chipcloud:verticalSpacing="10dp" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/addInterest"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="8dp"
+                    android:src="@drawable/drawable_add_button"
+                    android:visibility="gone" />
+
+                <LinearLayout
+                    android:id="@+id/groupsExpand"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/edit_profile_header_background"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_groups_title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/large_padding"
+                        android:layout_marginTop="@dimen/default_padding"
+                        android:layout_marginBottom="@dimen/default_padding"
+                        android:layout_weight="1"
+                        android:text="@{String.valueOf(stringConstant.groups_label)}"
+                        android:textAllCaps="true"
+                        android:textColor="@color/colorPrimary"
+                        android:textStyle="bold" />
+                    <!--                android:text="@string/groups_label"-->
+
+                    <com.i69.ui.views.ToggleImageView
+                        android:id="@+id/toggleGroupsExpand"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/default_padding"
+                        android:tint="@color/colorPrimary"
+                        app:checkedDrawable="@drawable/ic_expand_less"
+                        app:uncheckedDrawable="@drawable/ic_expand" />
+                </LinearLayout>
+
+                <net.cachapa.expandablelayout.ExpandableLayout
+                    android:id="@+id/groups"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    app:el_duration="1000"
+                    app:el_expanded="false"
+                    app:el_parallax="0.5">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/default_padding"
+                            android:layout_marginTop="@dimen/default_padding"
+                            android:layout_marginRight="@dimen/default_padding"
+                            android:orientation="vertical"
+                            android:paddingStart="@dimen/small_padding"
+                            android:paddingEnd="@dimen/default_padding">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/tv_politic_views"
+                                style="@style/MediumTextStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/small_padding"
+                                android:text="@{String.valueOf(stringConstant.politic_views_label)}"
+
+                                />
+                            <!--                        android:text="@string/politic_views_label"-->
+                            <com.i69.ui.views.NoDefaultSpinner
+                                android:id="@+id/politicViewPicker"
+                                android:layout_width="match_parent"
+                                android:layout_height="43dp"
+                                android:background="@null"
+                                android:prompt="@{String.valueOf(stringConstant.enter_your_politic_views)}"
+                                android:textSize="20sp"
+                                app:defaultPicker="@{defaultPicker.politicsPicker}"
+                                app:spinnerItems="@{defaultPicker.politicsPicker}"
+                                app:spinnerSelectedValue="@={user.politics}" />
+                            <!--                        android:prompt="@string/enter_your_politic_views"-->
+
+                        </LinearLayout>
+
+                        <View
+                            style="@style/DividerBlack"
+                            android:layout_width="match_parent"
+                            android:layout_height="9dp"
+                            android:layout_marginLeft="@dimen/default_padding"
+                            android:layout_marginRight="@dimen/default_padding" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/default_padding"
+                            android:layout_marginTop="@dimen/default_padding"
+                            android:layout_marginRight="@dimen/default_padding"
+                            android:orientation="vertical"
+                            android:paddingStart="@dimen/small_padding"
+                            android:paddingEnd="@dimen/default_padding">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/tv_ethnicity_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/small_padding"
+                                android:fontFamily="sans-serif"
+                                android:text="@{String.valueOf(stringConstant.ethnicity_label)}"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="@dimen/label_text_size"
+                                android:textStyle="bold" />
+
+                            <!--                        android:text="@string/ethnicity_label"-->
+
+                            <com.i69.ui.views.NoDefaultSpinner
+                                android:id="@+id/ethnicityPicker"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/edit_text_height"
+                                android:background="@null"
+                                android:prompt="@{String.valueOf(stringConstant.enter_your_ethnicity)}"
+                                android:textSize="20sp"
+                                app:defaultPicker="@{defaultPicker.ethnicityPicker}"
+                                app:spinnerItems="@{defaultPicker.ethnicityPicker}"
+                                app:spinnerSelectedValue="@={user.ethnicity}" />
+                            <!--                        android:prompt="@string/enter_your_ethnicity"-->
+                        </LinearLayout>
+
+                        <View
+                            style="@style/DividerBlack"
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_marginLeft="@dimen/default_padding"
+                            android:layout_marginRight="@dimen/default_padding" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/default_padding"
+                            android:layout_marginTop="@dimen/default_padding"
+                            android:layout_marginRight="@dimen/default_padding"
+                            android:orientation="vertical"
+                            android:paddingStart="@dimen/small_padding"
+                            android:paddingEnd="@dimen/default_padding">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/tv_religiousbeliefs_title"
+                                style="@style/MediumTextStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/small_padding"
+                                android:text="@{String.valueOf(stringConstant.religious_beliefs_label)}" />
+                            <!--                        android:text="@string/religious_beliefs_label"-->
+
+                            <com.i69.ui.views.NoDefaultSpinner
+                                android:id="@+id/religiousBeliefsPicker"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/edit_text_height"
+                                android:background="@null"
+                                android:prompt="@{String.valueOf(stringConstant.enter_your_religious_beliefs)}"
+                                android:textSize="20sp"
+                                app:defaultPicker="@{defaultPicker.religiousPicker}"
+                                app:spinnerItems="@{defaultPicker.religiousPicker}"
+                                app:spinnerSelectedValue="@={user.religion}" />
+                            <!--                        android:prompt="@string/enter_your_religious_beliefs"-->
+
+                        </LinearLayout>
+
+                        <View
+                            style="@style/DividerBlack"
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_marginLeft="@dimen/default_padding"
+                            android:layout_marginRight="@dimen/default_padding" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/default_padding"
+                            android:layout_marginTop="@dimen/default_padding"
+                            android:layout_marginRight="@dimen/default_padding"
+                            android:orientation="vertical"
+                            android:paddingStart="@dimen/small_padding"
+                            android:paddingEnd="@dimen/default_padding">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/tv_zodiac_sign"
+                                style="@style/MediumTextStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/small_padding"
+                                android:text="@{String.valueOf(stringConstant.zodiac_sign_label)}" />
+                            <!--                        android:text="@string/zodiac_sign_label"-->
+
+                            <com.i69.ui.views.NoDefaultSpinner
+                                android:id="@+id/zodiacSignPicker"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/edit_text_height"
+                                android:layout_marginBottom="12dp"
+                                android:background="@null"
+                                android:prompt="@{String.valueOf(stringConstant.enter_zodiac_sign)}"
+                                android:textSize="20sp"
+                                app:defaultPicker="@{defaultPicker.zodiacSignPicker}"
+                                app:spinnerItems="@{defaultPicker.zodiacSignPicker}"
+                                app:spinnerSelectedValue="@={user.zodiacSign}" />
+                            <!--                        android:prompt="@string/enter_zodiac_sign"-->
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </net.cachapa.expandablelayout.ExpandableLayout>
+
+                <LinearLayout
+                    android:id="@+id/interestsExpand"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/edit_profile_header_background"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?android:attr/selectableItemBackground">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tv_interests_title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/large_padding"
+                        android:layout_marginTop="@dimen/default_padding"
+                        android:layout_marginBottom="@dimen/default_padding"
+                        android:layout_weight="1"
+                        android:text="@{String.valueOf(stringConstant.interests_label)}"
+                        android:textAllCaps="true"
+                        android:textColor="@color/colorPrimary"
+                        android:textStyle="bold" />
+                    <!--                android:text="@string/interests_label"-->
+                    <com.i69.ui.views.ToggleImageView
+                        android:id="@+id/toggleInterestsExpand"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/default_padding"
+                        android:tint="@color/colorPrimary"
+                        app:checkedDrawable="@drawable/ic_expand_less"
+                        app:uncheckedDrawable="@drawable/ic_expand" />
+                </LinearLayout>
+
+                <net.cachapa.expandablelayout.ExpandableLayout
+                    android:id="@+id/interests"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    app:el_duration="1000"
+                    app:el_expanded="true"
+                    app:el_parallax="0.5">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/default_padding"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginRight="@dimen/default_padding"
+                            android:layout_marginBottom="4dp"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical"
+                            android:paddingStart="@dimen/small_padding"
+                            android:paddingEnd="@dimen/default_padding">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/tv_music_title"
+                                style="@style/MediumTextStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/small_padding"
+                                android:text="@{String.valueOf(stringConstant.music_label)}"
+
+                                />
+                            <!--                        android:text="@string/music_label"-->
+                            <com.i69.ui.views.InterestsView
+                                android:id="@+id/music"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginTop="@dimen/half_default_padding"
+                                chipcloud:allCaps="true"
+                                chipcloud:gravity="left|center_horizontal"
+                                chipcloud:minHorizontalSpacing="@dimen/small_padding"
+                                chipcloud:selectMode="none"
+                                chipcloud:verticalSpacing="@dimen/default_padding" />
+
+                        </LinearLayout>
+
+                        <View
+                            style="@style/DividerBlack"
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_marginLeft="@dimen/default_padding"
+                            android:layout_marginRight="@dimen/default_padding" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/default_padding"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginRight="@dimen/default_padding"
+                            android:layout_marginBottom="4dp"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical"
+                            android:paddingStart="@dimen/small_padding"
+                            android:paddingEnd="@dimen/default_padding">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/tv_movies_title"
+                                style="@style/MediumTextStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/small_padding"
+                                android:text="@{String.valueOf(stringConstant.movies_label)}" />
+                            <!--                        android:text="@string/movies_label"-->
+                            <com.i69.ui.views.InterestsView
+                                android:id="@+id/movies"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginTop="@dimen/half_default_padding"
+                                chipcloud:allCaps="true"
+                                chipcloud:deselectedColor="@android:color/white"
+                                chipcloud:deselectedFontColor="@color/colorPrimary"
+                                chipcloud:gravity="left|center_horizontal"
+                                chipcloud:minHorizontalSpacing="@dimen/small_padding"
+                                chipcloud:selectMode="none"
+                                chipcloud:textSize="14sp"
+                                chipcloud:verticalSpacing="@dimen/default_padding" />
+
+                        </LinearLayout>
+
+                        <View
+                            style="@style/DividerBlack"
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_marginLeft="@dimen/default_padding"
+                            android:layout_marginRight="@dimen/default_padding" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/default_padding"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginRight="@dimen/default_padding"
+                            android:layout_marginBottom="4dp"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical"
+                            android:paddingStart="@dimen/small_padding"
+                            android:paddingEnd="@dimen/default_padding">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/tv_tvshows_title"
+                                style="@style/MediumTextStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/small_padding"
+                                android:text="@{String.valueOf(stringConstant.tv_shows_label)}"
+
+                                />
+                            <!--                        android:text="@string/tv_shows_label"-->
+                            <com.i69.ui.views.InterestsView
+                                android:id="@+id/tvShows"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginTop="@dimen/half_default_padding"
+                                chipcloud:allCaps="true"
+                                chipcloud:deselectedColor="@android:color/white"
+                                chipcloud:deselectedFontColor="@color/colorPrimary"
+                                chipcloud:gravity="left"
+                                chipcloud:minHorizontalSpacing="@dimen/small_padding"
+                                chipcloud:selectMode="none"
+                                chipcloud:selectedColor="@android:color/white"
+                                chipcloud:selectedFontColor="@color/colorPrimary"
+                                chipcloud:textSize="14sp"
+                                chipcloud:verticalSpacing="@dimen/default_padding" />
+
+                        </LinearLayout>
+
+                        <View
+                            style="@style/DividerBlack"
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_marginLeft="@dimen/default_padding"
+                            android:layout_marginRight="@dimen/default_padding" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/default_padding"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginRight="@dimen/default_padding"
+                            android:layout_marginBottom="4dp"
+                            android:gravity="center_vertical"
+                            android:orientation="vertical"
+                            android:paddingStart="@dimen/small_padding"
+                            android:paddingEnd="@dimen/default_padding">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/tv_sportsteam_title"
+                                style="@style/MediumTextStyle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/small_padding"
+                                android:text="@{String.valueOf(stringConstant.sport_teams_label)}" />
+                            <!--                        android:text="@string/sport_teams_label"-->
+
+                            <com.i69.ui.views.InterestsView
+                                android:id="@+id/sportTeams"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginTop="@dimen/half_default_padding"
+                                chipcloud:allCaps="true"
+                                chipcloud:deselectedColor="@android:color/white"
+                                chipcloud:deselectedFontColor="@color/colorPrimary"
+                                chipcloud:gravity="left"
+                                chipcloud:minHorizontalSpacing="@dimen/small_padding"
+                                chipcloud:selectMode="none"
+                                chipcloud:selectedColor="@android:color/white"
+                                chipcloud:selectedFontColor="@color/colorPrimary"
+                                chipcloud:textSize="14sp"
+                                chipcloud:verticalSpacing="@dimen/default_padding" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </net.cachapa.expandablelayout.ExpandableLayout>
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</layout>

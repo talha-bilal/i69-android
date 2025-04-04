@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:paddingStart="@dimen/search_item_margin"
+        android:paddingTop="@dimen/search_item_margin"
+        android:paddingEnd="@dimen/search_item_margin"
+        android:paddingBottom="0dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvPlanType"
+            android:layout_width="110dp"
+            android:layout_height="145dp"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="0dp"
+
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clPlanType"
+                android:layout_width="110dp"
+                android:layout_height="145dp"
+
+                android:background="@color/amp_gray">
+
+<!--                android:background="@drawable/background_yellow_gradient"-->
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/top_image_guideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.02" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/bottom_image_guideline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_percent="0.7" />
+
+                <ImageView
+                    android:id="@+id/image_container"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:contentDescription="@string/app_name"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_plan_item_logo"
+                    app:layout_constraintBottom_toTopOf="@+id/bottom_image_guideline"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/top_image_guideline"
+                    app:layout_constraintWidth_percent=".5" />
+<!--                android:background="@drawable/background_circle_button_unchecked"-->
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/plan_title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:maxEms="1"
+                    android:ems="1"
+                    android:text="Silver Plan"
+                    android:textAllCaps="true"
+                    android:textColor="@color/search_unlock_text"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:lineSpacingExtra="0.1dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/image_container"
+                    app:layout_constraintWidth_percent=".8" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

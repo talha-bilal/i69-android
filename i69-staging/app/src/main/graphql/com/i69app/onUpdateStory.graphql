@@ -1,0 +1,73 @@
+
+subscription onUpdateStory($storiesList :[Int!]!) {
+
+    onUpdateStory(storiesList : $storiesList) {
+        storyId
+        likesCount
+                    likes{
+                        pageInfo {
+                            endCursor
+                            hasNextPage
+                            hasPreviousPage
+                            startCursor
+                        }
+                        edges {
+                            cursor
+                            node {
+                                id
+                                pk
+                                objectId
+                                user {
+                                    id
+                                    fullName
+                                    avatarIndex
+                                    avatarPhotos {
+                                        url
+                                        id
+                                    }
+                                    avatar {
+                                        id
+                                        url
+                                    }
+                                }
+                            }
+                        }
+                    }
+    commentsCount
+                    comments
+                    {
+                        pageInfo {
+                            endCursor
+                            hasNextPage
+                            hasPreviousPage
+                            startCursor
+                        }
+                        edges {
+                            cursor
+                            node {
+                                id
+                                pk
+                                createdDate
+                                commentDescription
+                                objectId
+                                pk
+                                user {
+
+                                    id
+                                    fullName
+                                    avatarIndex
+                                    avatarPhotos {
+                                        url
+                                        id
+                                    }
+                                    avatar {
+                                        id
+                                        url
+                                    }
+                                }
+                            }
+                        }
+                    }
+    }
+
+}

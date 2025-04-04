@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <!--    <string name="server_client_id" translatable="false">37873016176-m7aloihs6revp8b8ckc9mq0vmf6kk57o.apps.googleusercontent.com</string>-->
+    <string name="server_client_id" translatable="false">37873016176-uhso6bf4otu3a67af574fignb5olc28j.apps.googleusercontent.com</string>
+    <!--    <string name="facebook_app_id" translatable="false">2296848557136130</string>-->
+    <!--    <string name="fb_login_protocol_scheme" translatable="false">fb2296848557136130</string>-->
+
+
+    <string name="facebook_app_id" translatable="false">1610603699070152</string>
+    <string name="facebook_app_secret" translatable="false">cc752b4e78233fe6df148dc6305fb6d0</string>
+    <string name="fb_login_protocol_scheme" translatable="false">fb1610603699070152</string>
+    <string name="facebook_client_token" translatable="false">4db3d7ed31a60a5a8f223613472afc8c</string>
+
+
+</resources>

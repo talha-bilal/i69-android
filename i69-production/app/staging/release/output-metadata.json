@@ -1,0 +1,20 @@
+{
+  "version": 3,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "com.i69.isyxtinine",
+  "variantName": "stagingRelease",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "attributes": [],
+      "versionCode": 393,
+      "versionName": "64.9.193",
+      "outputFile": "app-staging-release.apk"
+    }
+  ],
+  "elementType": "File"
+}

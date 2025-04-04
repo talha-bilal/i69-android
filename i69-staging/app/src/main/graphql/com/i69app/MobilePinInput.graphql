@@ -1,0 +1,9 @@
+mutation MobilePinInput($chargingToken: String!,$code: Int!){
+
+    mobilePinInput(chargingToken: $chargingToken,code: $code){
+        operationReference
+        id
+        success
+    }
+
+}

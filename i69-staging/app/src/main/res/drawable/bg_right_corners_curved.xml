@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_selected="true">
+        <shape
+            android:shape="rectangle">
+            <gradient
+                android:endColor="@color/platinum_plan"
+                android:startColor="@color/platinum_plan" />
+
+            <corners android:topRightRadius="@dimen/_20sdp"
+                android:topLeftRadius="0dp"
+                android:bottomRightRadius="@dimen/_20sdp"
+                android:bottomLeftRadius="0dp"/>
+        </shape>
+    </item>
+
+    <item android:state_selected="false">
+        <shape
+            android:shape="rectangle">
+            <gradient
+                android:endColor="@color/planSelectedTextColor"
+                android:startColor="@color/planSelectedTextColor" />
+
+            <corners android:topRightRadius="@dimen/_20sdp"
+                android:topLeftRadius="0dp"
+                android:bottomRightRadius="@dimen/_20sdp"
+                android:bottomLeftRadius="0dp"/>
+        </shape>
+    </item>
+</selector>
+

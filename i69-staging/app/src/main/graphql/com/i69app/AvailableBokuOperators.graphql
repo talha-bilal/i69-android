@@ -1,0 +1,23 @@
+mutation AvailableBokuOperators($latitude: String!,$longitude: String!)
+{
+    availableBokuOperators(latitude: $latitude,longitude: $longitude)
+    {
+        operators
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

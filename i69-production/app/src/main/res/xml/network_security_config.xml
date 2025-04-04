@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <domain includeSubdomains="true">localhost</domain>
+        <!--<domain includeSubdomains="true">admin.chatadmin-mod.click</domain>
+        <domain includeSubdomains="true">95.216.208.1:8000</domain>-->
+        <domain includeSubdomains="true">api.chatadmin-mod.click</domain>
+        <domain includeSubdomains="true">95.216.208.1:8000</domain>
+        <domain includeSubdomains="true">api.i69app.com</domain>
+        <domain includeSubdomains="true">stesting-sslonline.online</domain>
+        <trust-anchors>
+            <certificates src="@raw/prod_ssl"/>
+            <certificates src="@raw/cert" />
+            <certificates src="@raw/chain"/>
+            <certificates src="@raw/fullchain"/>
+            <certificates src="@raw/api_i69app_com"/>
+            <certificates src="@raw/privkey"/>
+        </trust-anchors>
+    </domain-config>
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+</network-security-config>

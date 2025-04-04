@@ -1,0 +1,38 @@
+subscription OnNewMoment($moderatorId: String!,$token: String!){
+
+    onNewMoment(moderatorId: $moderatorId,token: $token){
+        moment {
+            pk
+            comment
+            createdDate
+            publishAt
+            file
+            id
+            like
+            momentDescription
+            momentDescriptionPaginated
+            user {
+                id
+                email
+                fullName
+                username
+                gender
+                email
+                avatar
+                {
+                    url
+                    id
+                    user
+                }
+                onesignalPlayerId
+                avatarPhotos {
+                    url
+                    id
+                    user
+                }
+            }
+        }
+
+    }
+
+}

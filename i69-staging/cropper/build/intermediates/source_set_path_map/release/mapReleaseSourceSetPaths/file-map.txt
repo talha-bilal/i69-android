@@ -1,0 +1,26 @@
+com.theartofdev.edmodo.cropper-lifecycle-viewmodel-2.6.2-0 C:\Users\DELL\.gradle\caches\8.10.2\transforms\1543ab65f7c03505516f987564753839\transformed\lifecycle-viewmodel-2.6.2\res
+com.theartofdev.edmodo.cropper-jetified-emoji2-1.3.0-1 C:\Users\DELL\.gradle\caches\8.10.2\transforms\16888fbbbe8e8385bdb6de60c916453a\transformed\jetified-emoji2-1.3.0\res
+com.theartofdev.edmodo.cropper-jetified-activity-1.7.0-2 C:\Users\DELL\.gradle\caches\8.10.2\transforms\2cc6a4699cf7da726aff810aea20a8b8\transformed\jetified-activity-1.7.0\res
+com.theartofdev.edmodo.cropper-jetified-annotation-experimental-1.4.0-3 C:\Users\DELL\.gradle\caches\8.10.2\transforms\437b28e773aae1dba3f8b8a1e68358ce\transformed\jetified-annotation-experimental-1.4.0\res
+com.theartofdev.edmodo.cropper-appcompat-1.7.0-4 C:\Users\DELL\.gradle\caches\8.10.2\transforms\49d929448f3f144bb84d1dbce7c974c1\transformed\appcompat-1.7.0\res
+com.theartofdev.edmodo.cropper-core-1.13.0-5 C:\Users\DELL\.gradle\caches\8.10.2\transforms\4c81b480f209b59944c54f223fd13154\transformed\core-1.13.0\res
+com.theartofdev.edmodo.cropper-jetified-emoji2-views-helper-1.3.0-6 C:\Users\DELL\.gradle\caches\8.10.2\transforms\6c6811ca7732500a0753b80e8c46730d\transformed\jetified-emoji2-views-helper-1.3.0\res
+com.theartofdev.edmodo.cropper-jetified-startup-runtime-1.1.1-7 C:\Users\DELL\.gradle\caches\8.10.2\transforms\8d97332b7ee01c050b09a2da69f8475f\transformed\jetified-startup-runtime-1.1.1\res
+com.theartofdev.edmodo.cropper-fragment-1.5.4-8 C:\Users\DELL\.gradle\caches\8.10.2\transforms\9a49cd3a2a17aecf699d1dd02281ff7d\transformed\fragment-1.5.4\res
+com.theartofdev.edmodo.cropper-jetified-savedstate-1.2.1-9 C:\Users\DELL\.gradle\caches\8.10.2\transforms\b797bde0fc82b7f98541ca3116413a66\transformed\jetified-savedstate-1.2.1\res
+com.theartofdev.edmodo.cropper-lifecycle-livedata-2.6.2-10 C:\Users\DELL\.gradle\caches\8.10.2\transforms\c186c0cd37889de2e61ed75aa9d5bbd9\transformed\lifecycle-livedata-2.6.2\res
+com.theartofdev.edmodo.cropper-jetified-profileinstaller-1.3.1-11 C:\Users\DELL\.gradle\caches\8.10.2\transforms\c5d109cdc11fce74763a41c3bea51c91\transformed\jetified-profileinstaller-1.3.1\res
+com.theartofdev.edmodo.cropper-lifecycle-livedata-core-2.6.2-12 C:\Users\DELL\.gradle\caches\8.10.2\transforms\cdb3b70289df5c582b375c88eadd1156\transformed\lifecycle-livedata-core-2.6.2\res
+com.theartofdev.edmodo.cropper-jetified-lifecycle-viewmodel-savedstate-2.6.2-13 C:\Users\DELL\.gradle\caches\8.10.2\transforms\dc718babd99fd00640c29ad7ab8de6d2\transformed\jetified-lifecycle-viewmodel-savedstate-2.6.2\res
+com.theartofdev.edmodo.cropper-jetified-core-ktx-1.13.0-14 C:\Users\DELL\.gradle\caches\8.10.2\transforms\df04cb99bebbaef841bcf089c42e9e74\transformed\jetified-core-ktx-1.13.0\res
+com.theartofdev.edmodo.cropper-core-runtime-2.2.0-15 C:\Users\DELL\.gradle\caches\8.10.2\transforms\e20ff2c53116ad8211e059378984ddad\transformed\core-runtime-2.2.0\res
+com.theartofdev.edmodo.cropper-lifecycle-runtime-2.6.2-16 C:\Users\DELL\.gradle\caches\8.10.2\transforms\e22814169c22cec969ed42691a36c331\transformed\lifecycle-runtime-2.6.2\res
+com.theartofdev.edmodo.cropper-jetified-lifecycle-process-2.6.2-17 C:\Users\DELL\.gradle\caches\8.10.2\transforms\eb389d9a94e8dc13153e3c561bcb0797\transformed\jetified-lifecycle-process-2.6.2\res
+com.theartofdev.edmodo.cropper-jetified-appcompat-resources-1.7.0-18 C:\Users\DELL\.gradle\caches\8.10.2\transforms\ecad2cef0d3ee6485caa973d1ab441f2\transformed\jetified-appcompat-resources-1.7.0\res
+com.theartofdev.edmodo.cropper-pngs-19 D:\Projects\i69 2\cropper\build\generated\res\pngs\release
+com.theartofdev.edmodo.cropper-resValues-20 D:\Projects\i69 2\cropper\build\generated\res\resValues\release
+com.theartofdev.edmodo.cropper-mergeReleaseResources-21 D:\Projects\i69 2\cropper\build\intermediates\incremental\release\mergeReleaseResources\merged.dir
+com.theartofdev.edmodo.cropper-mergeReleaseResources-22 D:\Projects\i69 2\cropper\build\intermediates\incremental\release\mergeReleaseResources\stripped.dir
+com.theartofdev.edmodo.cropper-release-23 D:\Projects\i69 2\cropper\build\intermediates\merged_res\release\mergeReleaseResources
+com.theartofdev.edmodo.cropper-main-24 D:\Projects\i69 2\cropper\src\main\res
+com.theartofdev.edmodo.cropper-release-25 D:\Projects\i69 2\cropper\src\release\res

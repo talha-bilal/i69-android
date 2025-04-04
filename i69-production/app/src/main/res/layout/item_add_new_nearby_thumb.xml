@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main_lay"
+        android:layout_width="@dimen/_78sdp"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/topl"
+            android:layout_width="@dimen/_78sdp"
+            android:layout_height="@dimen/_88sdp"
+            android:background="@drawable/add_story_back_oval"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.i69.ui.views.InsLoadingView
+                android:id="@+id/loadingView"
+                android:layout_width="@dimen/_78sdp"
+                android:layout_height="@dimen/_88sdp"
+                app:status="clicked" />
+
+            <ImageView
+                android:id="@+id/ivProfile"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_2sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_marginEnd="@dimen/_2sdp"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:scaleType="fitXY" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_2sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_marginEnd="@dimen/_2sdp"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:scaleType="fitXY"
+                android:src="@drawable/add_story_forground_oval" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/_26sdp"
+                android:layout_height="@dimen/_26sdp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_add_camera" />
+
+        </RelativeLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/addstorytext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:maxLines="2"
+            android:shadowColor="@color/warm_grey"
+            android:shadowRadius="8"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_9sdp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/topl"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="@string/add_story" />
+
+        <!--        tools:text="Add STORY"-->
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

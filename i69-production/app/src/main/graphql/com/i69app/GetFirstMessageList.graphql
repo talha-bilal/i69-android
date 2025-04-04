@@ -1,0 +1,27 @@
+query GetFirstMessageList{
+    firstmessageMsgs {
+        edges {
+            node {
+                byUserId{
+                    username
+                    fullName
+                    id
+                    userLanguageCode
+                    avatar {
+                        id
+                        url
+                    }
+                    avatarIndex
+                    avatarPhotos {
+                        id
+                        url
+
+                    }
+                }
+                content
+                timestamp
+                
+            }
+        }
+    }
+}

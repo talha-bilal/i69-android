@@ -1,0 +1,19 @@
+mutation story ($file:Upload!){
+    insertStory(file:$file){
+        story {
+            file
+            createdDate
+            id
+        }
+    }
+}
+
+mutation scheduleStory ($file:Upload!, $publishAt:DateTime!){
+    insertStory(file:$file, publishAt: $publishAt){
+        story {
+            file
+            createdDate
+            id
+        }
+    }
+}

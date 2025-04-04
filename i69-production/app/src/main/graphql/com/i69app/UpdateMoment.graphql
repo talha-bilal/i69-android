@@ -1,0 +1,6 @@
+mutation updateMoment($pk: Int!, $momentDescription: String!) {
+    updateMoment(pk:$pk, momentDescription: $momentDescription) {
+        success
+        message
+    }
+}

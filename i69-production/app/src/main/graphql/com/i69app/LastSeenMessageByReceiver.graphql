@@ -1,0 +1,10 @@
+subscription LastSeenMessageByReceiver($token: String!,$roomId: Int!){
+
+    onSeenLastMessageByReceiver(token: $token,roomId: $roomId){
+        message {
+            id
+            content
+        }
+    }
+
+}

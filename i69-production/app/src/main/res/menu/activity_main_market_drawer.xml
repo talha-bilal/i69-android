@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:title="@string/popular_category">
+            <menu>
+                <group
+                    android:id="@+id/groupSearch"
+                    android:checkableBehavior="single">
+                    <item
+                        android:id="@+id/nav_search_women"
+                        android:icon="@drawable/ic_woman_unchecked"
+                        android:title="@string/woomen_cloth" />
+                    <item
+                        android:id="@+id/nav_item_watches"
+                        android:icon="@drawable/baseline_watch_later_24"
+                        android:title="@string/watches" />
+
+                    <item
+                        android:id="@+id/nav_item_bags"
+                        android:icon="@drawable/bag"
+                        android:iconTint="@color/colorPrimary"
+                        android:title="@string/bags" />
+
+                    <item
+                        android:id="@+id/nav_item_men"
+                        android:icon="@drawable/laundry"
+                        android:title="@string/men_cloth" />
+
+                    <item
+                        android:id="@+id/nav_item_school"
+                        android:icon="@drawable/graduation_cap"
+                        android:title="@string/school_office" />
+
+                    <item
+                        android:id="@+id/nav_item_sports"
+                        android:icon="@drawable/running"
+                        android:title="@string/sport_outdoor" />
+
+                    <item
+                        android:id="@+id/nav_item_house_hold"
+                        android:icon="@drawable/home"
+                        android:title="@string/household_appliaces" />
+
+                    <item
+                        android:id="@+id/nav_item_jewelry"
+                        android:icon="@drawable/necklace"
+                        android:title="@string/jwellery" />
+
+                    <item
+                        android:id="@+id/nav_item_automobile"
+                        android:icon="@drawable/car"
+                        android:title="@string/automobile" />
+                </group>
+
+                <group
+                    android:id="@+id/groupCart"
+                    android:checkableBehavior="single">
+                    <item
+                        android:id="@+id/nav_item_cart"
+                        android:icon="@drawable/shopping_cart"
+                        android:title="@string/cart" />
+                </group>
+
+                <group
+                    android:id="@+id/groupContactUs"
+                    android:checkableBehavior="single">
+                    <item
+                        android:id="@+id/nav_item_contact"
+                        android:icon="@drawable/ic_email"
+                        android:title="@string/contact_us" />
+                </group>
+            </menu>
+        </item>
+<!--        <item-->
+<!--            android:title="Second Category">-->
+<!--            <menu>-->
+<!--                <group-->
+<!--                    android:id="@+id/menu_bottom"-->
+<!--                    android:checkableBehavior="single">-->
+<!--                    <item-->
+<!--                        android:id="@+id/id3"-->
+<!--                        android:icon="@drawable/search"-->
+<!--                        android:title="Title3" />-->
+
+<!--                </group>-->
+<!--            </menu>-->
+<!--        </item>-->
+    </group>
+</menu>

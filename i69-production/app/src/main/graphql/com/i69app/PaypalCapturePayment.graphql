@@ -1,0 +1,11 @@
+mutation PaypalCapturePayment($orderId: String!){
+
+    paypalCapturePayment(orderId: $orderId){
+
+				id
+				status
+
+    }
+
+}
+

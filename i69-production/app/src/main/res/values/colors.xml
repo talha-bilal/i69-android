@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#f3d27a</color>
+    <color name="colorPrimaryDark">#1b1d1f</color>
+    <color name="colorAccent">#815ef0</color>
+    <color name="textSubTitle">#474747</color>
+    <color name="prmotGrey">#A7A7A7</color>
+    <color name="lightGray">#FAFAFA</color>
+    <color name="lightGrey">#D3D3D3</color>
+    <color name="iconGray">#8C8C8C</color>
+    <color name="message_list_back">#1B6E7E</color>
+    <color name="wheat">#FDDE88</color>
+    <color name="blockedRed">#f33806</color>
+    <color name="no_default_spinner_background_color">#967F47</color>
+    <color name="tab_layout_background">#66000000</color>
+    <color name="commentbg">#284551</color>
+    <color name="bottom_bar">#183f51</color>
+
+    <color name="gray">#A7A7A7</color>
+    <color name="warm_grey">#A7A7A7</color>
+    <color name="dark_gray">#A7A7A7</color>
+
+    <color name="main_theme_gradient_default_end">#ffe088</color>
+    <color name="main_theme_gradient_default_start">#b48e33</color>
+    <color name="main_theme_gradient_pressed_end">#ffe088</color>
+    <color name="main_theme_gradient_pressed_start">#c7a248</color>
+    <color name="toolbar_color">#212427</color>
+    <color name="container_color">#373a3e</color>
+    <color name="drawer_divider_color">#cc000000</color>
+    <color name="black">#000000</color>
+    <color name="trans_black">#80000000</color>
+
+
+    <!--Interested In-->
+    <color name="interested_in_toolbar_text">#ffffff</color>
+    <color name="interested_in_description_background">#2c2f32</color>
+    <color name="interested_in_description_text">#ffffff</color>
+    <color name="interested_in_divider_shadow">#eac971</color>
+
+    <!--Search Unlock-->
+    <color name="search_unlock_text">#373a3e</color>
+
+    <color name="black_translucent">#26424239</color>
+    <color name="grey_translucent">#A6424239</color>
+
+    <!--Edit Profile-->
+    <color name="edit_profile_photo_list_background">#2c2f32</color>
+    <color name="edit_profile_text_hint_gray">#FFFFFF</color>
+    <color name="edit_profile_header_background">#26282b</color>
+    <color name="edit_profile_chip_text">#1b1d1f</color>
+
+    <!--Welcome-->
+    <color name="welcome_description_text">#80ffffff</color>
+    <color name="welcome_button_text">#222529</color>
+
+    <!-- User Profile -->
+    <color name="user_toolbar_parallax">#9FFFFFFF</color>
+    <color name="user_tab_idle_text">#f3d27a</color>
+    <color name="user_tab_selected_text">#80ffffff</color>
+    <color name="profile_header_background">#2F000000</color>
+    <color name="gifts_toolbar_background">#75000000</color>
+    <color name="gifts_pager_background">#52000000</color>
+    <color name="check_mark_overlay_color">#B99A9A9A</color>
+
+    <!--MenuFragment-->
+    <color name="menu_button_checked_background">#1b1d1f</color>
+    <color name="menu_button_unchecked_background">@color/container_color</color>
+
+    <!--SearchFragment-->
+    <color name="search_seek_bar_progress">@color/colorPrimary</color>
+    <color name="search_seek_bar_default">#1b1d1f</color>
+
+    <!-- Messenger chat-->
+    <color name="messenger_bar_background">#212427</color>
+    <color name="messenger_message_text_color">#1b1d1f</color>
+    <color name="messenger_time_text_color">#828588</color>
+
+    <!--Blocked Users-->
+    <color name="blocked_item_color">#1b1d1f</color>
+
+    <!--Purchase coins-->
+    <color name="purchase_item_background_color">#1D2024</color>
+    <color name="purchase_price_text_color">#222529</color>
+
+    <!-- MessageList-->
+    <color name="message_list_text_title_color_1">@color/white</color>
+    <color name="message_list_text_title_color_2">#1b1d1f</color>
+    <color name="message_list_text_title_color_3">#1b1d1f</color>
+    <color name="message_list_text_title_color_4">#1b1d1f</color>
+    <color name="message_list_text_title_color_5">#1b1d1f</color>
+    <color name="message_list_description_color_1">@color/white</color>
+    <color name="message_list_description_color_2">#828588</color>
+    <color name="message_list_container_2">@color/white</color>
+    <color name="message_list_container_3">@color/white</color>
+    <color name="message_list_container_4">@color/white</color>
+    <color name="message_list_container_5">@color/white</color>
+    <!--    <color name="message_list_container_6">#4030AECA</color>-->
+    <!--    <color name="message_list_container_6">#66FFFFFF</color>-->
+    <color name="message_list_container_6">#1B6E7E</color>
+
+    <!--Settings-->
+    <color name="settings_buy_next_tint_color">#212427</color>
+    <color name="settings_buy_text_color">#1b1d1f</color>
+    <color name="settings_logout_block_color">#212427</color>
+
+    <!-- CHIPS library-->
+    <color name="chip">#f3d27a</color>
+    <color name="white">#ffffff</color>
+
+    <color name="colorPrimaryPix">@color/colorPrimary</color>
+    <color name="toolbar_search_color">#D5B25F</color>
+
+    <!--USER-MOMENTS-->
+    <color name="yellow_FBFBAB">#FBFBAB</color>
+    <color name="C203c41">#95203c41</color>
+    <color name="C053440">#90053440</color>
+    <color name="C001823">#001823</color>
+    <color name="C011f2a">#95011f2a</color>
+    <color name="Cfcfcfc">#95fcfcfc</color>
+    <color name="colorNavigationBackground">#EBAA09</color>
+    <color name="trans">#00FFFFFF</color>
+    <color name="CE4F3FF">#E4F3FF</color>
+    <!--    <color name="C1F2430">#1F2430</color>-->
+    <!--    <color name="C30AECAdf">#8030AECA</color>-->
+
+    <!--PaymentOptions-->
+    <color name="paymenttype_bg">#f8f8f8</color>
+
+
+    <color name="silver_plan">#C4D5F6</color>
+    <color name="gold_plan">#E5CE6F</color>
+    <color name="platinum_plan">#B58F46</color>
+
+
+    <color name="chat_tranparanr_black">#803A3A3A</color>
+
+    <color name="transparent">#AEFAD478</color>
+    <color name="sdahd">#FFE6AB</color>
+    <color name="moment_camera_round">#C79C48</color>
+    <color name="color_transparant_80">#CC1F2430</color>
+    <color name="color_line">#D9D9D9</color>
+    <color name="visitorSubTextColor">#F1D282</color>
+    <color name="tabLayoutBackDark">#3A3A3A</color>
+    <color name="profileTransBlackOverlayColor">#403A3A3A</color>
+    <color name="memberShipTextColor">#191919</color>
+    <color name="select_file_image_text_color">#FFD778</color>
+    <color name="attachMomentBackColor">#FFD566</color>
+    <color name="blackTransOverlayComparePrice">#801F2430</color>
+    <color name="defaultPlanTextColor">#7F8A8E</color>
+    <color name="planSelectedTextColor">#3A3A3A</color>
+    <color name="colorStartGradientPriceCompare">#FBDC85</color>
+    <color name="colorEndGradientPriceCompare">#B48E39</color>
+    <color name="black_trans_bottom_sheet_back">#99000000</color>
+    <color name="storyTopBackground">#333A3A3A</color>
+    <color name="grey_shimmer">#C2C2C2</color>
+
+
+    <color name="primary_blue">#005ABA</color>
+    <color name="amp_blue">#005488</color>
+    <color name="amp_gray">#60758B</color>
+    <color name="grey">#545454</color>
+
+
+    <color name="transparentBlack">#FF000000</color>
+    <color name="micRed">#e12626</color>
+
+    <!--Market Place-->
+    <color name="market_row_home_white">#ffffff</color>
+    <color name="full_tranparent">#00FFFFFF</color>
+    <color name="red_market_discount">#CB3030</color>
+    <color name="market_text_store">#62AFC7</color>
+
+    <color name="white_translucent">#AAFFFFFF</color>
+
+    <color name="border">@color/white_translucent</color>
+    <color name="guideline">@color/white_translucent</color>
+    <color name="corner">@android:color/white</color>
+    <color name="surrounding_area">@color/black_translucent</color>
+    <color name="lighter_gray">#eeeeee</color>
+    <color name="txt_color">#3b3b3b</color>
+</resources>

@@ -1,0 +1,29 @@
+query GetNotification($id: Int!) {
+
+ notification(id: $id) { 
+        id
+        pk
+        data
+     createdDate
+        notificationBody
+        notificationData {
+            body
+            title
+        }
+        seen
+     priority
+        user {
+            id
+            username
+        }
+     notificationSetting {
+         title
+     }
+     sender {
+         id
+         username
+     }
+    }
+    
+}
+

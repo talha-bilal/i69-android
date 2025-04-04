@@ -1,0 +1,9 @@
+schema: schema.graphql
+extensions:
+  endpoints:
+    Default GraphQL Endpoint:
+      url: https://api.i69app.com/
+      headers:
+        user-agent: JS GraphQL
+        Authorization: Token 3e6989ddee01c81a9637b56abbbd88c83381d171
+      introspect: false

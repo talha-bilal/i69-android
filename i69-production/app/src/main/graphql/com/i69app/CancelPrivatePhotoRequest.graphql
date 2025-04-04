@@ -1,0 +1,7 @@
+mutation CancelPrivatePhotoRequest($userId: String!){
+
+    cancelPrivatePhotoRequest(userId: $userId){
+        message
+    }
+
+}

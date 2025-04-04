@@ -1,0 +1,12 @@
+query GetAllSocialAuthStatus{
+
+	allSocialAuthStatus{
+	
+		id
+		provider
+		status
+		timestamp
+
+	}
+
+}

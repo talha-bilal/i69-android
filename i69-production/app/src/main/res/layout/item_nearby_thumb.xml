@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:CircleProgressView="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <!--    <FrameLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent">-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/parentLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.i69.ui.views.InsLoadingView
+            android:id="@+id/loadingView"
+            android:layout_width="@dimen/_78sdp"
+            android:layout_height="@dimen/_88sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:status="clicked" />
+
+        <ImageView
+            android:id="@+id/imgUserStory"
+            android:layout_width="@dimen/_78sdp"
+            android:layout_height="@dimen/_88sdp"
+            android:contentDescription="@string/app_name"
+            android:padding="@dimen/_2sdp"
+            android:scaleType="fitXY"
+            android:src="@drawable/icon_moment_story"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/ivPlay"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_action_playcircle"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/imgUserStory"
+            app:layout_constraintEnd_toEndOf="@id/imgUserStory"
+            app:layout_constraintStart_toStartOf="@id/imgUserStory"
+            app:layout_constraintTop_toTopOf="@id/imgUserStory" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/txtItemNearbyName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:maxLength="14"
+            android:shadowColor="@color/warm_grey"
+            android:shadowRadius="8"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_9sdp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgUserStory"
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="Jenifer Lopez" />
+
+        <ImageView
+            android:id="@+id/imgNearbyProfile"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/background_circle_button_checked"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/icon_nearby_user"
+            app:layout_constraintBottom_toBottomOf="@id/progressindicator_stories"
+            app:layout_constraintEnd_toEndOf="@id/progressindicator_stories"
+            app:layout_constraintStart_toStartOf="@id/progressindicator_stories"
+            app:layout_constraintTop_toTopOf="@id/progressindicator_stories" />
+
+
+        <at.grabner.circleprogress.CircleProgressView
+            android:id="@+id/progressindicator_stories"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:shadowColor="@color/warm_grey"
+            android:shadowRadius="8"
+            CircleProgressView:cpv_blockCount="3"
+            CircleProgressView:cpv_blockScale="0.8"
+            CircleProgressView:cpv_rimColor="#FFE088"
+            CircleProgressView:cpv_rimWidth="3dp"
+            app:layout_constraintBottom_toBottomOf="@+id/ViewBottom"
+            app:layout_constraintEnd_toEndOf="@id/imgUserStory"
+            app:layout_constraintStart_toStartOf="@id/imgUserStory"
+            app:layout_constraintTop_toTopOf="@id/ViewBottom" />
+
+
+        <View
+            android:id="@+id/ViewBottom"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="18dp"
+            app:layout_constraintBottom_toBottomOf="@id/imgUserStory"
+            app:layout_constraintEnd_toEndOf="@id/imgUserStory"
+            app:layout_constraintStart_toStartOf="@id/imgUserStory"
+            app:layout_constraintTop_toBottomOf="@id/imgUserStory" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!--    </FrameLayout>-->
+</layout>

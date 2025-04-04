@@ -1,0 +1,22 @@
+mutation ReportStory($storyId: ID!,$ReportMsg: String!)
+{
+    reportStory(storyId: $storyId, ReportMsg: $ReportMsg)
+    {
+        storyReport
+        {
+            id
+            story
+            {
+                id
+                pk
+
+            },
+            user
+            {
+                id
+                username
+                email
+            }
+        }
+    }
+}

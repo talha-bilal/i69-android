@@ -1,0 +1,14 @@
+ mutation downgradePackage($newPackageId: Int!){
+  
+  downgradePackage(newPackageId: $newPackageId) {
+
+            id
+			success
+			message
+            
+
+    }
+}
+ 
+  
+  

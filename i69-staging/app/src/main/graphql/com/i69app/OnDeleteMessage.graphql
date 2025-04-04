@@ -1,0 +1,7 @@
+subscription OnDeleteMessage($roomId: Int!,$token: String!,$moderatorId: String!){
+
+    onDeleteMessage(roomId: $roomId,token: $token,moderatorId: $moderatorId){
+        id
+    }
+
+}

@@ -1,0 +1,114 @@
+query GetUser($id: String!) {
+    user(id: $id) {
+        avatarIndex
+		id
+		username
+		fullName
+		email
+		gender
+		about
+		planname
+		avatarPhotos
+		{
+	    	id
+           url
+           user
+
+		}
+		userAttrTranslation{
+            id
+            name
+		}
+
+        isConnected
+		followersCount
+		followingCount
+		followerUsers
+		{
+			username
+			firstName
+            lastName
+            fullName
+
+
+			id
+			email
+            isConnected
+			avatarPhotos
+            		{
+            	    	id
+                       url
+                       user
+
+            		}
+
+		}
+		followingUsers
+		{
+			username
+			firstName
+            lastName
+            fullName
+			id
+			email
+            isConnected
+			avatarPhotos
+            		{
+            	    	id
+                       url
+                       user
+
+            		}
+
+
+		}
+
+		userVisitorsCount
+        userVisitingCount
+        userVisitors
+        {
+        			username
+        			firstName
+                    lastName
+                    fullName
+        			id
+        			email
+					datetime
+					followersCount
+					followingCount
+                    isConnected
+        			avatarPhotos
+                    		{
+                    	    	id
+                               url
+                               user
+
+                    		}
+
+
+        		}
+        userVisiting
+
+        {
+        			username
+        			id
+        			email
+					datetimeVisiting
+					followersCount
+					followingCount
+        			firstName
+                    lastName
+                    fullName
+                    isConnected
+        			avatarPhotos
+                    		{
+                    	    	id
+                               url
+                               user
+
+                    		}
+
+
+        }
+    }
+}

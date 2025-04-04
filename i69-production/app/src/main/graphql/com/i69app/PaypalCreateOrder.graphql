@@ -1,0 +1,10 @@
+mutation PaypalCreateOrder($amount:Float! ,$currency: String!){
+
+    paypalCreateOrder(amount: $amount, currency: $currency){
+
+				id
+				status
+
+    }
+
+}

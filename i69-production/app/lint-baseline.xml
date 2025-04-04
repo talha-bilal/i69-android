@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<issues format="6" by="lint 7.1.3" type="baseline" client="gradle" dependencies="false" name="AGP (7.1.3)" variant="fatal" version="7.1.3">
+
+    <issue
+        id="NullSafeMutableLiveData"
+        message="Expected non-nullable value"
+        errorLine1="        defaultPickers.value = _defaultPickers"
+        errorLine2="                               ~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/i69app/data/remote/repository/AppRepository.kt"
+            line="27"
+            column="32"/>
+    </issue>
+
+    <issue
+        id="NullSafeMutableLiveData"
+        message="Expected non-nullable value"
+        errorLine1="            defaultPickers.postValue(_defaultPickers)"
+        errorLine2="                                     ~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/i69app/data/remote/repository/AppRepository.kt"
+            line="71"
+            column="38"/>
+    </issue>
+
+    <issue
+        id="NullSafeMutableLiveData"
+        message="Expected non-nullable value"
+        errorLine1="                currentUser.postValue(_currentUser)"
+        errorLine2="                                      ~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/i69app/data/remote/repository/UserDetailsRepository.kt"
+            line="45"
+            column="39"/>
+    </issue>
+
+    <issue
+        id="NullSafeMutableLiveData"
+        message="Expected non-nullable value"
+        errorLine1="        currentUser.postValue(_currentUser)"
+        errorLine2="                              ~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/i69app/data/remote/repository/UserDetailsRepository.kt"
+            line="48"
+            column="31"/>
+    </issue>
+
+    <issue
+        id="NullSafeMutableLiveData"
+        message="Expected non-nullable value"
+        errorLine1="                currentUser.postValue(_currentUser)"
+        errorLine2="                                      ~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/i69app/data/remote/repository/UserDetailsRepository.kt"
+            line="56"
+            column="39"/>
+    </issue>
+
+    <issue
+        id="NullSafeMutableLiveData"
+        message="Expected non-nullable value"
+        errorLine1="        currentUser.postValue(_currentUser)"
+        errorLine2="                              ~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/i69app/data/remote/repository/UserDetailsRepository.kt"
+            line="60"
+            column="31"/>
+    </issue>
+
+    <issue
+        id="NullSafeMutableLiveData"
+        message="Expected non-nullable value"
+        errorLine1="            currentUser.postValue(_currentUser)"
+        errorLine2="                                  ~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/i69app/data/remote/repository/UserDetailsRepository.kt"
+            line="67"
+            column="35"/>
+    </issue>
+
+    <issue
+        id="NullSafeMutableLiveData"
+        message="Expected non-nullable value"
+        errorLine1="        currentUser.postValue(_currentUser)"
+        errorLine2="                              ~~~~~~~~~~~~">
+        <location
+            file="src/main/java/com/i69app/data/remote/repository/UserDetailsRepository.kt"
+            line="176"
+            column="31"/>
+    </issue>
+
+    <issue
+        id="NullSafeMutableLiveData"
+        message="Cannot set non-nullable LiveData value to `null`"
+        errorLine1="                _data.postValue(null)"
+        errorLine2="                                ~~~~">
+        <location
+            file="src/main/java/com/i69app/profile/vm/VMProfile.kt"
+            line="115"
+            column="33"/>
+    </issue>
+
+</issues>

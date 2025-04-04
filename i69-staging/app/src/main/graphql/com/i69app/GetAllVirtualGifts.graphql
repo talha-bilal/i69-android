@@ -1,0 +1,8 @@
+query GetAllVirtualGifts{
+    allVirtualGift {
+        id,
+        cost,
+        giftName,
+        picture
+    }
+}

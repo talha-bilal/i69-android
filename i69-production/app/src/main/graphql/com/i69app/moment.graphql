@@ -1,0 +1,23 @@
+mutation moment ($file:Upload!, $detail:String!, $userField:String!, $allowComment: Boolean!) {
+    insertMoment(Title: "Latest Moment", file: $file, momentDescription: $detail, user: $userField, allowComment: $allowComment) {
+        moment {
+            user {
+                username
+            }
+            file
+            id
+        }
+    }
+}
+
+mutation scheduleMoment ($file:Upload!, $detail:String!, $userField:String!, $allowComment: Boolean!, $publishAt:DateTime!) {
+    insertMoment(Title: "Latest Moment", file: $file, momentDescription: $detail, user: $userField, allowComment: $allowComment, publishAt: $publishAt) {
+        moment {
+            user {
+                username
+            }
+            file
+            id
+        }
+    }
+}

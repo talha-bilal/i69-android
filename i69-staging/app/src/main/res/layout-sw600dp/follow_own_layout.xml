@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.i69.utils.ViewUtilsKt" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="user"
+            type="com.i69.data.models.User" />
+
+        <variable
+            name="vm"
+            type="com.i69.profile.vm.VMProfile" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/lyfollowBtns"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/follow_back"
+        android:gravity="center"
+        android:weightSum="@{vm.isEditEnabled ? 2 : 3}">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/btnFollowing"
+            style="@style/TextAppearance.AppCompat.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/_4sdp"
+            android:background="@drawable/following_left"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:text="@{vm.data.user.userAttrTranslation.get(2).name +` ` + @string/dots_vertical +` ` + vm.data.user.followingCount}"
+            android:textColor="@color/black" />
+
+        <LinearLayout
+            android:id="@+id/btnFollow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:background="@drawable/following_left"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="@{vm.isEditEnabled ? View.GONE : View.VISIBLE}"
+            tools:visibility="visible">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_follow_add" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:elevation="10dp"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:text="@{vm.data.user.userAttrTranslation.get(3).name}"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+
+        <ImageView
+            android:id="@+id/btnVisitorSearchUser"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_marginHorizontal="@dimen/_16sdp"
+            android:src="@drawable/profile_icon5"
+            android:visibility="@{vm.isSearchUserEditEnabled ? View.VISIBLE : View.GONE}" />
+
+        <ImageView
+            android:id="@+id/btnVisitor"
+            android:layout_width="43dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/profile_icon5"
+            android:visibility="@{vm.isEditEnabled ? View.VISIBLE : View.GONE}"
+            tools:visibility="gone" />
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/btnFollower"
+            style="@style/TextAppearance.AppCompat.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="@dimen/_4sdp"
+            android:background="@drawable/following_right"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:text="@{vm.data.user.userAttrTranslation.get(4).name +` `+ @string/dots_vertical +` `+ vm.data.user.followersCount}"
+            android:textColor="@color/black"
+            />
+
+        <!--            android:text="@string/follower"-->
+
+
+    </LinearLayout>
+</layout>

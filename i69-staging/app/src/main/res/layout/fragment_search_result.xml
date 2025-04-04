@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="stringConstant"
+            type="com.i69.applocalization.AppStringConstant" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clRoot"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/searchToolbar"
+            android:layout_width="0dp"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@drawable/back_toolbar"
+            android:elevation="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/actionBack"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:padding="12dp"
+                android:layout_marginStart="12dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/back_new1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="5dp"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:letterSpacing="0.2"
+                android:textSize="12sp"
+                tools:text="Resultats De Resultate Result"
+                android:text="@{String.valueOf(stringConstant.search_results)}"
+                android:textAllCaps="true"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/search"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/actionBack"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.567" />
+<!--            android:text="@string/search_results"-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/searchChiledContainer"
+                android:layout_width="0dp"
+                android:layout_marginEnd="48dp"
+                android:visibility="gone"
+                android:layout_height="45dp"
+                android:background="@drawable/black_transparent_search"
+                android:padding="6dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/actionBack"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <!--                android:layout_marginStart="15dp"-->
+                <!--                android:layout_marginEnd="15dp"-->
+
+
+                <!--        android:backgroundTint="#4DF3D27A"-->
+
+                <!--        android:layout_marginStart="16dp"-->
+                <!--        android:layout_marginTop="6dp"-->
+                <!--        android:layout_marginEnd="16dp"-->
+                <!--        android:paddingTop="4dp"-->
+                <!--        android:paddingBottom="4dp"-->
+                <!--        app:layout_constraintEnd_toEndOf="parent"-->
+
+                <ImageView
+                    android:id="@+id/interestsIcon"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginStart="8dp"
+                    android:contentDescription="@string/app_name"
+                    android:padding="4dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:src="@drawable/search_left" />
+
+                <EditText
+                    android:id="@+id/keyInput"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:backgroundTint="@color/white"
+                    android:background="@null"
+                    android:fontFamily="sans-serif"
+                    android:hint="@{String.valueOf(stringConstant.search_user_by_name)}"
+                    android:imeOptions="actionSearch"
+                    android:singleLine="true"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white_five"
+                    android:textSize="16sp"
+                    android:textStyle="normal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/icon_send_message"
+                    app:layout_constraintStart_toEndOf="@id/interestsIcon"
+                    app:layout_constraintTop_toTopOf="parent" />
+<!--                android:hint="@string/search_user_by_name"-->
+                <!--        android:textColor="@color/search_text"-->
+                <!--        android:textColorHint="#000000"-->
+
+                <!--            app:layout_constraintEnd_toEndOf="parent"-->
+
+                <ImageView
+                    android:id="@id/icon_send_message"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginEnd="6dp"
+                    android:visibility="gone"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/icon_send_message_chet"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+            <ImageView
+                android:id="@+id/bell"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:contentDescription="@string/app_name"
+                android:padding="7dp"
+                android:src="@drawable/bell_black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/cross"
+                android:visibility="gone"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:contentDescription="@string/app_name"
+                android:padding="15dp"
+                android:src="@drawable/cross"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/bell"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/search"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:contentDescription="@string/app_name"
+                android:padding="15dp"
+                android:src="@drawable/search"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/bell"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/counter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/circular_border"
+                android:gravity="center"
+                android:textSize="10sp"
+                android:text="0"
+                android:visibility="gone"
+                android:textColor="@color/black"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_5sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/bell"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/slidingTabs"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:alpha="0.9"
+            android:background="@color/edit_profile_chip_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/searchToolbar"
+            app:tabIndicatorColor="@color/colorPrimary"
+            app:tabIndicatorHeight="3dp"
+            app:tabMode="fixed"
+            app:tabSelectedTextColor="@color/user_tab_idle_text"
+            app:tabTextColor="@color/user_tab_selected_text" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llProgressRoot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/slidingTabs"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:gravity="center">
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/circular_progress"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:flow_wrapMode="chain"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/slidingTabs">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <include layout="@layout/list_item_searched_user_shimmer" />
+
+                <include layout="@layout/list_item_searched_user_shimmer" />
+
+                <include layout="@layout/list_item_searched_user_shimmer" />
+
+                <include layout="@layout/list_item_searched_user_shimmer" />
+
+                <include layout="@layout/list_item_searched_user_shimmer" />
+
+                <include layout="@layout/list_item_searched_user_shimmer" />
+
+                <include layout="@layout/list_item_searched_user_shimmer" />
+
+                <include layout="@layout/list_item_searched_user_shimmer" />
+
+                <include layout="@layout/list_item_searched_user_shimmer" />
+
+                <include layout="@layout/list_item_searched_user_shimmer" />
+
+                <include layout="@layout/list_item_searched_user_shimmer" />
+            </LinearLayout>
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/searchPageViewPager"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/slidingTabs" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- CHIPS library -->
+    <dimen name="default_textsize">@dimen/_7ssp</dimen>
+    <dimen name="material_chip_height">@dimen/_16sdp</dimen>
+    <dimen name="min_horizontal_spacing">@dimen/_3sdp</dimen>
+    <dimen name="vertical_spacing">@dimen/_3sdp</dimen>
+    <dimen name="search_item_margin">@dimen/_2sdp</dimen>
+    <dimen name="preview_anim_view_height">@dimen/_30sdp</dimen>
+    <dimen name="preview_anim_view_margin">@dimen/_3sdp</dimen>
+
+
+</resources>

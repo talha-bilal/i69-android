@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_curved_grey"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/llBottomsheetRoot"
+        android:background="@drawable/background" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/llBottomsheetRoot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/_10sdp">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="8dp"
+            android:layout_marginStart="6dp"
+            android:gravity="center"
+            android:maxLines="2"
+            android:text="@string/share_options"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:autoSizeMinTextSize="6sp"
+            app:autoSizeTextType="uniform" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/background_upload_file"
+            android:backgroundTint="@color/Cfcfcfc"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layoutUploadFile">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvShareNow"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:visibility="visible"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="6dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/llShareNowRoot"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/CE4F3FF"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rbShareNow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:checked="true" />
+
+                    <ImageView
+                        android:id="@+id/ivPostLocked"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="16dp"
+                        android:paddingVertical="13dp"
+                        android:src="@drawable/lock"
+                        android:visibility="gone"
+                        app:tint="@color/black" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:weightSum="2">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvShareNow"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/_17sdp"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:layout_weight="1.5"
+                            android:ellipsize="middle"
+                            android:fontFamily="sans-serif-medium"
+                            android:maxLines="2"
+                            android:text="@string/share_now"
+                            android:textStyle="bold" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvShareNowCoins"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:layout_weight="0.5"
+                            android:drawableStart="@drawable/coins_small"
+                            android:fontFamily="sans-serif-medium"
+                            android:gravity="center"
+                            android:text="0"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvShareLater"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:visibility="visible"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="6dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cvShareNow">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/llShareLaterRoot"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/CE4F3FF"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rbShareLater"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:checked="false" />
+
+                    <ImageView
+                        android:id="@+id/ivLocked"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="16dp"
+                        android:paddingVertical="13dp"
+                        android:src="@drawable/lock"
+                        android:visibility="gone"
+                        app:tint="@color/black" />
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:weightSum="2">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvShareLater"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/_17sdp"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:layout_weight="1.5"
+                            android:ellipsize="middle"
+                            android:fontFamily="sans-serif-medium"
+                            android:maxLines="2"
+                            android:text="@string/schedule_for_later"
+                            android:textStyle="bold" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvShareLaterCoins"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginStart="@dimen/_5sdp"
+                            android:layout_marginEnd="@dimen/_5sdp"
+                            android:layout_weight="0.5"
+                            android:drawableStart="@drawable/coins_small"
+                            android:fontFamily="sans-serif-medium"
+                            android:gravity="center"
+                            android:text="0"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </com.google.android.material.card.MaterialCardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/btnShareMoment"
+            android:layout_width="wrap_content"
+            android:layout_height="28dp"
+            android:layout_gravity="end"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:paddingTop="10dp"
+            app:cardCornerRadius="14dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/search_toolbar_graient"
+                android:gravity="center"
+                android:paddingStart="24dp"
+                android:paddingTop="6dp"
+                android:paddingEnd="24dp"
+                android:paddingBottom="6dp"
+                android:text="@string/share"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</RelativeLayout>

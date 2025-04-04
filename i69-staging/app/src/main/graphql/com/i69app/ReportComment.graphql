@@ -1,0 +1,11 @@
+mutation ReportComment($ReportMsg:String! ,$commentId: Int!){
+
+    reportComment(ReportMsg: $ReportMsg,commentId: $commentId){
+		    commentReport
+		    {
+				id
+				pk
+		    }
+    }
+
+}

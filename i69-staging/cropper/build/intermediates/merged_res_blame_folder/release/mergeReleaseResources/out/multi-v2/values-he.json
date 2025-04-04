@@ -1,0 +1,48 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.theartofdev.edmodo.cropper-release-22:/values-he/values-he.xml",
+            "map": [
+                {
+                    "source": "D:\\Projects\\i69 2\\cropper\\src\\main\\res\\values-he\\strings.xml",
+                    "from": {
+                        "startLines": "13,3,6,7,8,9,4,5,11",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "566,56,242,296,350,424,103,180,496",
+                        "endColumns": "90,46,53,53,73,70,76,61,68",
+                        "endOffsets": "652,98,291,345,419,490,175,237,560"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,146,193,247,301,375,446,523,585",
+                        "endColumns": "90,46,53,53,73,70,76,61,68",
+                        "endOffsets": "141,188,242,296,370,441,518,580,649"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "com.theartofdev.edmodo.cropper-mergeReleaseResources-20:/values-he/values-he.xml",
+            "map": [
+                {
+                    "source": "D:\\Projects\\i69 2\\cropper\\src\\main\\res\\values-he\\strings.xml",
+                    "from": {
+                        "startLines": "13,3,6,7,8,9,4,5,11",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "566,56,242,296,350,424,103,180,496",
+                        "endColumns": "90,46,53,53,73,70,76,61,68",
+                        "endOffsets": "652,98,291,345,419,490,175,237,560"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10",
+                        "startColumns": "4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,146,193,247,301,375,446,523,585",
+                        "endColumns": "90,46,53,53,73,70,76,61,68",
+                        "endOffsets": "141,188,242,296,370,441,518,580,649"
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="stringConstant"
+            type="com.i69.applocalization.AppStringConstant" />
+
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:paddingTop="@dimen/_7sdp"
+        android:paddingBottom="@dimen/_7sdp"
+        xmlns:tools="http://schemas.android.com/tools">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clMainItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/linyer_comperprice_subcribe"
+            android:paddingTop="@dimen/_7sdp"
+            android:paddingBottom="@dimen/_7sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/clDetailContent">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/purchaseUsingCoin"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_4sdp"
+                android:fontFamily="sans-serif-medium"
+                android:textAllCaps="true"
+                android:maxLines="2"
+                android:textSize="@dimen/_12sdp"
+                app:layout_constraintTop_toTopOf="@id/tvPurchaseUsingCoin"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/price"
+                app:layout_constraintBottom_toBottomOf="@+id/tvPurchaseUsingCoin"
+                android:textColor="@color/planSelectedTextColor"
+                tools:text="@string/gold"/>
+
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:maxLines="2"
+                app:layout_constraintTop_toTopOf="@id/tvPurchaseUsingCoin"
+                app:layout_constraintBottom_toBottomOf="@id/tvPurchaseUsingCoin"
+                app:layout_constraintEnd_toStartOf="@+id/tvPurchaseUsingCoin"
+                android:layout_marginHorizontal="@dimen/_8sdp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp"
+                android:textStyle="bold"
+                tools:text="$7.49" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvMoreDetail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/_2sdp"
+                android:paddingBottom="@dimen/_2sdp"
+                android:layout_marginHorizontal="@dimen/_4sdp"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center_vertical"
+                android:textSize="@dimen/_11sdp"
+                android:textColor="@color/planSelectedTextColor"
+                android:text="@string/more_details_"
+                app:layout_constraintTop_toBottomOf="@+id/purchaseUsingCoin"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivDown"
+                app:layout_constraintStart_toEndOf="@+id/tvMoreDetail"
+                app:layout_constraintTop_toTopOf="@+id/tvMoreDetail"
+                app:layout_constraintBottom_toBottomOf="@+id/tvMoreDetail"
+                android:src="@drawable/ic_down_arrow"
+                android:padding="4dp"
+                android:layout_width="@dimen/_16sdp"
+                android:layout_height="@dimen/_16sdp"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvPurchaseUsingCoin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/text_comperprice_subcribe"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:letterSpacing="0.1"
+                android:paddingLeft="@dimen/_7sdp"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingRight="@dimen/_7sdp"
+                android:paddingBottom="@dimen/_5sdp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:text="@{String.valueOf(stringConstant.subscribe)}"
+                android:textAllCaps="true"
+                android:textColor="@color/select_file_image_text_color"
+                tools:text="@string/subscribe" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            app:layout_constraintTop_toBottomOf="@+id/clMainItem"
+            android:id="@+id/clDetailContent"
+            android:visibility="gone"
+            android:layout_marginTop="@dimen/_7sdp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvMaxText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="center"
+                android:letterSpacing="0.1"
+                android:paddingLeft="@dimen/_7sdp"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingRight="@dimen/_7sdp"
+                android:paddingBottom="@dimen/_5sdp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:text="@string/maximize_dating_with_premium"
+                android:textAllCaps="true"
+                android:textColor="@color/select_file_image_text_color" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewCoins"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:nestedScrollingEnabled="false"
+                android:visibility="visible"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvMaxText"
+                tools:listitem="@layout/item_purchase_plan_comper" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

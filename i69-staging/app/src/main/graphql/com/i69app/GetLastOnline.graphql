@@ -1,0 +1,8 @@
+query GetLastOnline($id: String!){
+
+    lastOnline(id: $id){
+        id
+        lastSeen
+    }
+
+}

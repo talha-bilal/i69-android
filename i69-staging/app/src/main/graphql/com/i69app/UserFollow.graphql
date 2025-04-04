@@ -1,0 +1,25 @@
+mutation UserFollow($userId: ID!)
+{
+    userFollow(userId: $userId)
+    {
+        profileFollow
+        {
+            id
+
+		follower{
+				id
+                username
+                email
+		}
+
+		following{
+		
+				id
+                username
+                email
+		}
+
+		createdAt
+        }
+    }
+}

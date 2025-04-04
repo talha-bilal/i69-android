@@ -1,0 +1,10 @@
+query selfMomentLikes($momentPk: Int!) {
+    selfMomentLikes(momentPk: $momentPk) {
+        user {
+            id
+            username
+            email
+            fullName
+        }
+    }
+}

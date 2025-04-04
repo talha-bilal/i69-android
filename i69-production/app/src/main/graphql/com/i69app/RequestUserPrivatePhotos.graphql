@@ -1,0 +1,7 @@
+mutation RequestUserPrivatePhotosMutation($receiverId: String!){
+
+    requestUserPrivatePhotos(receiverId: $receiverId){
+        msg
+    }
+
+}

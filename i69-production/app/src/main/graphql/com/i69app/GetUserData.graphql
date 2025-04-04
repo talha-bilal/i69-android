@@ -1,0 +1,13 @@
+query GetUserData ($id: String!){
+    user(id: $id) {
+       avatar
+       {
+           url
+       }
+        avatarIndex
+        avatarPhotos {
+            url
+        }
+    }
+
+}

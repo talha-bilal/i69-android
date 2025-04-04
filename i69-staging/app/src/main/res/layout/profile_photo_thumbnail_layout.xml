@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data></data>
+
+    <FrameLayout
+        android:layout_width="132dp"
+        android:layout_height="140dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="@dimen/profile_photo_thumb_size"
+            android:layout_height="@dimen/profile_photo_thumb_size"
+            android:layout_marginTop="@dimen/small_padding"
+            android:layout_marginBottom="@dimen/small_padding"
+            app:cardCornerRadius="@dimen/profile_photo_thumb_corners_radius">
+
+            <FrameLayout
+                android:id="@+id/lyt_gift"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/photo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/app_name"
+                    android:scaleType="centerCrop"
+                    tools:src="@tools:sample/avatars" />
+
+                <ImageView
+                    android:id="@+id/BB"
+                    android:layout_width="93dp"
+                    android:layout_height="93dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_baseline_verified_24"
+                    android:visibility="gone" />
+            </FrameLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:elevation="4dp"
+            android:paddingStart="8dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="2dp"
+            android:paddingBottom="8dp">
+
+            <ImageButton
+                android:id="@+id/removePhotoButton"
+                android:layout_width="@dimen/profile_remove_photo_button_size"
+                android:layout_height="@dimen/profile_remove_photo_button_size"
+                android:layout_gravity="end"
+                android:background="@drawable/magenta_circle"
+                android:contentDescription="@string/app_name"
+                android:padding="2dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_delete"
+                app:tint="@color/iconGray" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="4dp"
+            android:paddingStart="8dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="2dp"
+            android:paddingBottom="8dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgView"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:src="@drawable/eye_50"
+                android:padding="@dimen/_2sdp"
+                app:tint="@color/textSubTitle" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/iv_private"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:elevation="4dp"
+            android:paddingStart="8dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="2dp"
+            android:paddingBottom="8dp"
+            android:visibility="gone">
+
+            <ImageButton
+                android:layout_width="@dimen/profile_remove_photo_button_size"
+                android:layout_height="@dimen/profile_remove_photo_button_size"
+                android:layout_gravity="end"
+                android:background="@drawable/magenta_circle"
+                android:contentDescription="@string/app_name"
+                android:padding="2dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/privateimage"
+                app:tint="@color/iconGray" />
+
+        </FrameLayout>
+
+
+    </FrameLayout>
+
+</layout>

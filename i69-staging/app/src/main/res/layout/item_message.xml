@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.i69.GetAllRoomsQuery.Edge" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="obj"
+            type="com.i69.GetAllRoomsQuery.Edge" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="60dp"
+        android:textAlignment="viewStart">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/root_chiled"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/empty_view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_min="60dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed">
+            <!--        android:minHeight="110dp"-->
+            <!--        android:layout_marginBottom="1dp"-->
+
+            <ImageView
+                android:id="@+id/img"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_default_user"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <!--        android:visibility="@{obj.user.online ? View.VISIBLE : View.GONE}"-->
+            <ImageView
+                android:id="@+id/onlineStatus"
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/round_green"
+                app:layout_constraintBottom_toBottomOf="@id/img"
+                app:layout_constraintEnd_toEndOf="@id/img"
+                app:layout_constraintHorizontal_bias="0.98"
+                app:layout_constraintStart_toStartOf="@id/img"
+                app:layout_constraintTop_toTopOf="@id/img"
+                app:layout_constraintVertical_bias="0.98" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/title"
+                style="@style/TextAppearance.AppCompat.Medium"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:ellipsize="end"
+                android:fontFamily="sans-serif"
+                android:maxLines="1"
+                android:textColor="@color/message_list_text_title_color_1"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/subtitle"
+                app:layout_constraintEnd_toStartOf="@+id/time"
+                app:layout_constraintStart_toEndOf="@id/img"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed"
+                tools:text="@tools:sample/full_names" />
+            <!--        app:layout_constraintTop_toTopOf="@+id/img"-->
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/subtitle"
+                style="@style/TextAppearance.AppCompat.Small"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="16dp"
+                android:drawablePadding="8dp"
+                android:ellipsize="end"
+                android:fontFamily="sans-serif"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:textColor="@color/message_list_description_color_1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/ivDelete"
+                app:layout_constraintStart_toEndOf="@id/img"
+                app:layout_constraintTop_toBottomOf="@+id/title"
+                app:layout_goneMarginEnd="16dp"
+                tools:text="@tools:sample/lorem/random" />
+            <!--        tools:drawableStartCompat="@drawable/ic_photo"-->
+
+            <!--        app:layout_constraintVertical_bias="0.0"-->
+            <!--        app:layout_constraintHorizontal_bias="0.0"-->
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/timeGuideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.95" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/time"
+                style="@style/TextAppearance.AppCompat.Small"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:textColor="@color/textSubTitle"
+                app:layout_constraintEnd_toEndOf="@id/timeGuideline"
+                app:layout_constraintTop_toTopOf="@id/img"
+                tools:text="12 min ago" />
+            <!--        tools:text="1 month ago"-->
+
+            <ImageView
+                android:id="@+id/continueDialog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_keyboard_arrow_right"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/timeGuideline"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/white"
+                tools:tint="@color/white" />
+            <!--        tools:tint="@color/colorPrimary"-->
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/unseen_messages"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/circle_shape"
+                android:gravity="center"
+                android:padding="4dp"
+                android:textColor="@color/black"
+                android:visibility="gone"
+                app:autoSizeMinTextSize="6sp"
+                app:autoSizeTextType="uniform"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/timeGuideline"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="99" />
+
+            <ImageView
+                android:id="@+id/ivDelete"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_delete_icon"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/timeGuideline"
+                app:layout_constraintTop_toBottomOf="@id/continueDialog"
+                app:tint="@color/blockedRed"
+                tools:tint="@color/blockedRed" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/empty_view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

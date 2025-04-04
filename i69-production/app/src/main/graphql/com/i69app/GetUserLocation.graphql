@@ -1,0 +1,8 @@
+query GetUserLocation($id: String!){
+
+    userLocation(id: $id){
+        id
+        distance
+    }
+
+}

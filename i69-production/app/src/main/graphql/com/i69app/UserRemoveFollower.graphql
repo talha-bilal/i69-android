@@ -1,0 +1,9 @@
+mutation UserRemoveFollower($userId: ID!){
+
+        userRemoveFollower(userId: $userId)
+        {
+             message
+        }
+
+
+}

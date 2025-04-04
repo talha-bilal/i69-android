@@ -1,0 +1,25 @@
+subscription ChatRoomSubscription($token:String!,$moderatorId:String!,$roomId:Int!) {
+    onNewMessage(token: $token,moderatorId: $moderatorId,roomId: $roomId) {
+        message {
+            id
+            appLanguageCode
+            roomId {
+                id
+                name
+            }
+            userId {
+                id
+                fullName
+                username
+                avatarIndex
+                avatarPhotos {
+                    url
+                }
+            }
+            content
+            messageType
+            timestamp
+            read
+        }
+    }
+}

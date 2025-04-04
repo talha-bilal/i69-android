@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="#00000000">
+
+    <RelativeLayout
+        android:id="@+id/rlDialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/select_camera_onmoment_background"
+        android:padding="@dimen/_20sdp">
+
+        <TextView
+            android:id="@+id/header_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/roboto_medium_numbers"
+            android:text="@string/turn_on_location"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sdp" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/yes_button"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_below="@id/header_title"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/wallet_upgrade_button"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="@string/ok"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/_14sdp"
+            android:textStyle="bold" />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

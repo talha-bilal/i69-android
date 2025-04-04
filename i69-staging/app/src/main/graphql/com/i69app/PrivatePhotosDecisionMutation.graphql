@@ -1,0 +1,7 @@
+mutation PrivatePhotosDecisionMutation($decision: String!, $requestId: Int!){
+
+    privatePhotoDecision(decision: $decision,requestId: $requestId){
+        success
+    }
+
+}

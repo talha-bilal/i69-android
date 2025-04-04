@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rlContainer"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="@dimen/_5sdp"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ivCapturePreview"
+        android:layout_width="@dimen/_60sdp"
+        android:layout_height="@dimen/_70sdp"
+        android:src="@drawable/ic_chat_item_logo_new"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/filterName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:text="Ancient"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+</FrameLayout>

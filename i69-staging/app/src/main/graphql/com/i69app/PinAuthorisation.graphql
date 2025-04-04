@@ -1,0 +1,9 @@
+mutation PinAuthorisation($mobileNumber: String!,$operatorCode: String!,$recurringPayment: Boolean!,$userId: String!)
+{
+    pinAuthorisation(mobileNumber: $mobileNumber,operatorCode: $operatorCode,recurringPayment: $recurringPayment,userId: $userId){
+        operationReference
+        id
+        userId
+        success
+    }
+}

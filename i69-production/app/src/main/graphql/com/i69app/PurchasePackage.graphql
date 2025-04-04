@@ -1,0 +1,11 @@
+  mutation PurchasePackage($packageId: Int!,$planId: Int!){
+  
+  purchasePackage(packageId: $packageId, planId: $planId) {
+
+            id
+			success
+            
+
+    }
+  
+  }

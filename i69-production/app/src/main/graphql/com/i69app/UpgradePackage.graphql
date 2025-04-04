@@ -1,0 +1,12 @@
+mutation UpgradePackage($newPackageId: Int!){
+  
+  upgradePackage(newPackageId: $newPackageId) {
+
+            id
+			success
+			message
+            
+
+    }
+}
+ 

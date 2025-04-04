@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="stringConstant"
+            type="com.i69.applocalization.AppStringConstant" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:gravity="center"
+        android:layoutDirection="ltr"
+        android:orientation="vertical"
+        android:padding="@dimen/_7sdp">
+        <!--        android:background="@drawable/background"-->
+        <!--        android:weightSum="1"-->
+        <!--        android:background="@drawable/search_toolbar_graient"-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/searchToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:elevation="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+            <!--            app:layout_constraintBottom_toTopOf="@+id/purchaseTop"-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                tools:ignore="MissingConstraints">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    tools:ignore="MissingConstraints">
+
+                    <ImageView
+                        android:id="@+id/purchaseClose"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:src="@drawable/lock"
+                        app:tint="@color/white" />
+
+                    <!--    app:layout_constraintBottom_toBottomOf="parent"-->
+                    <!--    app:layout_constraintStart_toStartOf="parent"-->
+                    <!--    app:layout_constraintTop_toTopOf="parent"-->
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center|start"
+                        android:fontFamily="sans-serif-medium"
+                        android:layout_weight="1"
+                        android:textAlignment="viewStart"
+                        android:letterSpacing="0.1"
+                        android:text="@{String.valueOf(stringConstant.unlock)}"
+                        android:layout_marginLeft="@dimen/_7sdp"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white" />
+<!--                    android:text="@string/unlock"-->
+                    <!--    app:layout_constraintBottom_toBottomOf="parent"-->
+                    <!--    app:layout_constraintEnd_toEndOf="@+id/purchaseClose"-->
+                    <!--    app:layout_constraintStart_toStartOf="parent"-->
+                    <!--    app:layout_constraintTop_toTopOf="parent"-->
+
+
+                    <ImageView
+                        android:id="@+id/icClose"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ic_cross_close"
+                        app:tint="@color/white" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/linyer_comperprice_subcribe"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/_7sdp"
+                    android:paddingBottom="@dimen/_7sdp"
+                    tools:ignore="MissingConstraints">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/purchaseUsingCoin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="5dp"
+
+                        android:layout_weight="1"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="center_vertical"
+                        android:letterSpacing="0.1"
+                        android:text="@{String.valueOf(stringConstant.unlock_this_funtion)}"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white" />
+<!--                    android:text="@string/unlock_this_funtion"-->
+
+                    <com.google.android.material.textview.MaterialTextView
+                       android:id="@+id/tvPurchaseUsingCoin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@drawable/text_comperprice_subcribe"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="center"
+                        android:letterSpacing="0.1"
+                        android:paddingLeft="@dimen/_7sdp"
+                        android:paddingTop="@dimen/_5sdp"
+                        android:paddingRight="@dimen/_7sdp"
+                        android:paddingBottom="@dimen/_5sdp"
+                        android:text="@{String.valueOf(stringConstant.subscribe)}"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white" />
+<!--                    android:text="@string/subscribe"-->
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:orientation="horizontal"
+                    tools:ignore="MissingConstraints">
+
+                    <ImageView
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/membership"
+
+                        app:tint="@color/white" />
+
+                    <!--    app:layout_constraintBottom_toBottomOf="parent"-->
+                    <!--    app:layout_constraintStart_toStartOf="parent"-->
+                    <!--    app:layout_constraintTop_toTopOf="parent"-->
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="center"
+                        android:layout_marginLeft="@dimen/_7sdp"
+                        android:letterSpacing="0.1"
+                        android:text="@{String.valueOf(stringConstant.subscribe_for_unlimited)}"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white" />
+<!--                    android:text="@string/subscribe_for_unlimited"-->
+                    <!--    app:layout_constraintBottom_toBottomOf="parent"-->
+                    <!--    app:layout_constraintEnd_toEndOf="@+id/purchaseClose"-->
+                    <!--    app:layout_constraintStart_toStartOf="parent"-->
+                    <!--    app:layout_constraintTop_toTopOf="parent"-->
+
+                </LinearLayout>
+
+                <!--                <ImageView-->
+                <!--                    android:id="@+id/purchaseClose"-->
+                <!--                    android:layout_width="32dp"-->
+                <!--                    android:layout_height="60dp"-->
+                <!--                    android:contentDescription="@string/app_name"-->
+                <!--                    android:padding="16dp"-->
+                <!--                    android:scaleType="fitCenter"-->
+                <!--                    android:src="@drawable/ic_cross_close"-->
+                <!--                    app:layout_constraintStart_toStartOf="parent"-->
+                <!--                    app:layout_constraintTop_toTopOf="parent"-->
+                <!--                    app:tint="@color/black" />-->
+
+                <!--                <ImageView-->
+                <!--                    android:id="@+id/purchaseClose"-->
+                <!--                    android:layout_width="32dp"-->
+                <!--                    android:layout_height="32dp"-->
+                <!--                    android:contentDescription="@string/app_name"-->
+                <!--                    android:padding="5dp"-->
+                <!--                    android:src="@drawable/ic_cross_close"-->
+                <!--                    android:visibility="gone"-->
+                <!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+                <!--                    app:layout_constraintStart_toEndOf="@+id/toolbarHamburger"-->
+                <!--                    app:layout_constraintTop_toTopOf="parent" />-->
+
+
+                <!--            <com.google.android.material.textview.MaterialTextView-->
+                <!--                android:layout_width="wrap_content"-->
+                <!--                android:layout_height="wrap_content"-->
+                <!--                android:layout_marginStart="6dp"-->
+                <!--                android:fontFamily="sans-serif-medium"-->
+                <!--                android:letterSpacing="0.2"-->
+                <!--                android:text="@string/isixtynine"-->
+                <!--                android:textAllCaps="true"-->
+                <!--                android:textColor="@color/black"-->
+                <!--                android:textStyle="bold"-->
+                <!--                app:layout_constraintBottom_toBottomOf="parent"-->
+                <!--                app:layout_constraintStart_toEndOf="@+id/toolbarLogo"-->
+                <!--                app:layout_constraintTop_toTopOf="parent" />-->
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scroll_view1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:clipToPadding="false"
+            android:fillViewport="true"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/searchToolbar">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:scrollbars="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <LinearLayout
+                        android:id="@+id/purchaseTop"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25dp"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        app:layout_constrainedHeight="true"
+                        app:layout_constraintBottom_toTopOf="@+id/pager_dots"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHeight_max="150dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recyclerViewPlan"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center_horizontal"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            tools:listitem="@layout/list_item_plan_name" />
+
+                    </LinearLayout>
+
+
+                    <!--                    <LinearLayout-->
+                    <!--                        android:id="@+id/pager_dots"-->
+                    <!--                        android:layout_width="0dp"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:background="@android:color/transparent"-->
+                    <!--                        android:gravity="center_horizontal"-->
+                    <!--                        android:orientation="horizontal"-->
+                    <!--                        android:visibility="visible"-->
+                    <!--                        app:layout_constraintBottom_toTopOf="@+id/top_guideline"-->
+
+                    <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+                    <!--                        app:layout_constraintStart_toStartOf="parent"-->
+                    <!--                        />-->
+                    <!--                app:layout_constraintBottom_toBottomOf="parent"-->
+                    <!--                    app:layout_constraintTop_toBottomOf="@+id/planLinear"-->
+
+
+                    <!--                    <androidx.constraintlayout.widget.Guideline-->
+                    <!--                        android:id="@+id/top_bottom_guideline"-->
+                    <!--                        android:layout_width="wrap_content"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:orientation="horizontal"-->
+                    <!--                        app:layout_constraintGuide_percent="0.80" />-->
+
+                    <!--                </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+
+                    <!--                <androidx.constraintlayout.widget.Guideline-->
+                    <!--                    android:id="@+id/top_guideline"-->
+                    <!--                    android:layout_width="wrap_content"-->
+                    <!--                    android:layout_height="wrap_content"-->
+                    <!--                    android:orientation="horizontal"-->
+                    <!--                    app:layout_constraintGuide_percent="0.24" />-->
+
+                    <LinearLayout
+                        android:id="@+id/pager_dots"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+
+                        android:layout_marginTop="10dp"
+                        android:background="@android:color/transparent"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal"
+                        android:visibility="visible"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/purchaseTop" />
+                    <!--                app:layout_constraintBottom_toTopOf="@+id/top_guideline"-->
+
+                    <!--                app:layout_constraintTop_toBottomOf="@+id/top_guideline"-->
+
+
+                    <!--                    <com.google.android.material.textview.MaterialTextView-->
+                    <!--                        android:id="@+id/purchaseDescription"-->
+                    <!--                        android:layout_width="0dp"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:layout_marginTop="5dp"-->
+                    <!--                        android:fontFamily="sans-serif-medium"-->
+                    <!--                        android:gravity="center"-->
+                    <!--                        android:singleLine="true"-->
+                    <!--                        android:text="@string/see_who_likes_you"-->
+                    <!--                        android:textColor="@color/white"-->
+                    <!--                        android:textSize="12sp"-->
+                    <!--                        android:textStyle="bold"-->
+                    <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+                    <!--                        app:layout_constraintStart_toStartOf="parent"-->
+                    <!--                        app:layout_constraintTop_toBottomOf="@+id/pager_dots" />-->
+
+
+                    <!-- need to change text color to gradient - from code-->
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/purchaseTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="center"
+                        android:maxLines="2"
+                        android:text="@{String.valueOf(stringConstant.maximise_your_dating_with_all_the_benefits_of_n_premium_plus_extra_features_included)}"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/pager_dots" />
+
+<!--                    android:text="@string/maximise_your_dating_with_all_the_benefits_of_n_premium_plus_extra_features_included"-->
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerViewCoins"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:nestedScrollingEnabled="false"
+                        android:visibility="visible"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/purchaseTitle"
+                        tools:listitem="@layout/item_purchase_plan_comper" />
+                    <!--                app:layout_constraintBottom_toBottomOf="parent"-->
+
+
+                    <!--                    <androidx.constraintlayout.widget.ConstraintLayout-->
+                    <!--                        android:id="@+id/item_purchase_benifets"-->
+                    <!--                        android:layout_width="match_parent"-->
+                    <!--                        android:layout_height="wrap_content"-->
+                    <!--                        android:layout_marginTop="15dp"-->
+                    <!--                        android:background="@drawable/round_shape_up_corner"-->
+                    <!--                        android:padding="10dp"-->
+                    <!--                        app:layout_constraintBottom_toBottomOf="parent"-->
+                    <!--                        app:layout_constraintLeft_toLeftOf="parent"-->
+                    <!--                        app:layout_constraintRight_toRightOf="parent"-->
+                    <!--                        app:layout_constraintStart_toStartOf="parent"-->
+                    <!--                        app:layout_constraintTop_toBottomOf="@id/recyclerViewCoins">-->
+
+                    <!--                        <LinearLayout-->
+                    <!--                            android:layout_width="match_parent"-->
+                    <!--                            android:layout_height="wrap_content"-->
+                    <!--                            android:orientation="vertical"-->
+                    <!--                            app:layout_constraintBottom_toBottomOf="parent"-->
+                    <!--                            app:layout_constraintLeft_toLeftOf="parent"-->
+                    <!--                            app:layout_constraintStart_toStartOf="parent"-->
+                    <!--                            app:layout_constraintTop_toTopOf="parent">-->
+
+
+                    <!--                            <com.google.android.material.textview.MaterialTextView-->
+                    <!--                                android:layout_width="match_parent"-->
+                    <!--                                android:layout_height="wrap_content"-->
+                    <!--                                android:layout_marginTop="10dp"-->
+                    <!--                                android:fontFamily="sans-serif-medium"-->
+                    <!--                                android:gravity="center_vertical"-->
+                    <!--                                android:singleLine="true"-->
+                    <!--                                android:text="@string/benefits"-->
+                    <!--                                android:textColor="@color/colorPrimary"-->
+                    <!--                                android:textSize="14sp"-->
+                    <!--                                android:textStyle="bold" />-->
+
+
+                    <!--                            <androidx.recyclerview.widget.RecyclerView-->
+                    <!--                                android:id="@+id/recyclerViewBenefits"-->
+                    <!--                                android:layout_width="match_parent"-->
+                    <!--                                android:layout_height="wrap_content"-->
+                    <!--                                android:layout_margin="10dp"-->
+                    <!--                                android:nestedScrollingEnabled="false"-->
+                    <!--                                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
+                    <!--                                app:layout_constraintLeft_toLeftOf="parent"-->
+                    <!--                                app:layout_constraintRight_toRightOf="parent"-->
+                    <!--                                app:layout_constraintTop_toBottomOf="@id/purchaseTitle"-->
+                    <!--                                tools:listitem="@layout/item_purchase_plan_benifets" />-->
+
+
+                    <!--                            <com.google.android.material.textview.MaterialTextView-->
+                    <!--                                android:layout_width="match_parent"-->
+                    <!--                                android:layout_height="wrap_content"-->
+                    <!--                                android:layout_marginLeft="10dp"-->
+                    <!--                                android:layout_marginTop="10dp"-->
+                    <!--                                android:fontFamily="sans-serif-medium"-->
+                    <!--                                android:gravity="center_vertical"-->
+                    <!--                                android:text="@string/recurring_billing_cancel_anytime_subscription_automatically_renews_after_trail_ends"-->
+                    <!--                                android:textAllCaps="false"-->
+                    <!--                                android:textColor="@color/colorPrimary"-->
+                    <!--                                android:textSize="12sp"-->
+                    <!--                                android:textStyle="bold" />-->
+
+                    <!--                        </LinearLayout>-->
+
+                    <!--                    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+                    <!--                <androidx.recyclerview.widget.RecyclerView-->
+                    <!--                    android:id="@+id/recyclerViewDetails"-->
+                    <!--                    android:layout_width="0dp"-->
+                    <!--                    android:layout_height="0dp"-->
+                    <!--                    android:layout_marginTop="10dp"-->
+                    <!--                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
+                    <!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+                    <!--                    app:layout_constraintLeft_toLeftOf="parent"-->
+                    <!--                    app:layout_constraintRight_toRightOf="parent"-->
+                    <!--                    app:layout_constraintTop_toBottomOf="@id/recyclerViewCoins"-->
+                    <!--                    tools:listitem="@layout/item_purchase_plan" />-->
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+            <!--        </RelativeLayout>-->
+
+
+        </androidx.core.widget.NestedScrollView>
+
+        <LinearLayout
+            android:id="@+id/llComparePlan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_80sdp"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@+id/scroll_view1"
+            tools:ignore="MissingConstraints">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:background="@drawable/linyer_comperprice_price"
+                android:drawableLeft="@drawable/baseline_keyboard_arrow_right_24"
+                android:fontFamily="sans-serif-medium"
+                android:gravity="right"
+                android:letterSpacing="0.1"
+                android:padding="@dimen/_7sdp"
+                android:text="@{String.valueOf(stringConstant.compare_price)}"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                tools:ignore="MissingConstraints" />
+
+<!--            android:text="@string/compare_price"-->
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>
