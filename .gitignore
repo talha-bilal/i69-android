@@ -4,3 +4,8 @@ i69-production/app/staging/release/i69app-staging-release.apk
 /i69-staging/.gradle
 /i69-staging/.idea
 i69-staging/app/staging/release/i69app-staging-release.apk
+/i69-production/app/build
+/i69-production/build
+/i69-production/cropper/build
+/i69-staging/app/build
+/i69-staging/cropper/build
