@@ -44,9 +44,20 @@ import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.google.android.material.textview.MaterialTextView
 import com.google.gson.Gson
-import com.i69.*
+import com.i69.AvailableBokuOperatorsMutation
+import com.i69.ChargePaymentMutation
+import com.i69.GetPaymentMethodsQuery
+import com.i69.MobilePinInputMutation
+import com.i69.OnPaymentMethodChangeSubscription
+import com.i69.PaymentByOperationReferenceQuery
+import com.i69.PaypalCapturePaymentMutation
+import com.i69.PaypalCreateOrderMutation
+import com.i69.PinAuthorisationMutation
 import com.i69.R
 import com.i69.R.id.ed_pin
+import com.i69.StripeCreateIntentMutation
+import com.i69.StripePaymentSuccessMutation
+import com.i69.StripePublishableKeyQuery
 import com.i69.applocalization.AppStringConstant
 import com.i69.applocalization.AppStringConstant1
 import com.i69.applocalization.AppStringConstantViewModel
@@ -62,13 +73,21 @@ import com.i69.ui.adapters.OperatorsAdapter
 import com.i69.ui.base.BaseFragment
 import com.i69.ui.screens.main.MainActivity
 import com.i69.ui.viewModels.PurchaseCoinsViewModel
-import com.i69.utils.*
+import com.i69.utils.Resource
+import com.i69.utils.SharedPref
+import com.i69.utils.apolloClient
+import com.i69.utils.apolloClientSubscription
+import com.i69.utils.autoSnackbarOnTop
+import com.i69.utils.setViewVisible
+import com.i69.utils.snackbar
 import com.paypal.checkout.paymentbutton.PayPalButton
-import com.stripe.android.*
+import com.stripe.android.PaymentConfiguration
+import com.stripe.android.Stripe
 import com.stripe.android.model.ConfirmPaymentIntentParams
 import com.stripe.android.model.PaymentIntent
 import com.stripe.android.view.CardInputWidget
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import org.json.JSONException
 import org.json.JSONObject
@@ -184,6 +203,40 @@ class PurchaseFragment : BaseFragment<FragmentPurchaseNewBinding>() {
                             coinPrice.discountedPrice.toDouble(),
                             coinPrice.currency
                         )
+                        for (avc in paymentMethod) {
+
+                            if (avc!!.paymentMethod.contentEquals("Google Pay")) {
+                                if (avc.isAllowed) {
+                                    googlePay.setViewVisible()
+                                } else {
+                                    googlePay.visibility = View.GONE
+                                }
+                            } else if (avc.paymentMethod.contentEquals("InApp")) {
+                                if (avc.isAllowed) {
+                                    google.setViewVisible()
+                                } else {
+                                    google.visibility = View.GONE
+                                }
+                            } else if (avc.paymentMethod.contentEquals("Paypal")) {
+                                if (avc.isAllowed) {
+                                    payapal.setViewVisible()
+                                } else {
+                                    payapal.visibility = View.GONE
+                                }
+                            } else if (avc.paymentMethod.contentEquals("Stripe")) {
+                                if (avc.isAllowed) {
+                                    stripePay.setViewVisible()
+                                } else {
+                                    stripePay.visibility = View.GONE
+                                }
+                            } else if (avc.paymentMethod.contentEquals("Boku")) {
+                                if (avc.isAllowed) {
+                                    boku.setViewVisible()
+                                } else {
+                                    boku.visibility = View.GONE
+                                }
+                            }
+                        }
                     }
                 })
             binding?.recyclerViewCoins?.adapter = adapterCoinPrice
@@ -205,8 +258,8 @@ class PurchaseFragment : BaseFragment<FragmentPurchaseNewBinding>() {
             val response = try {
                 apolloClientSubscription(requireContext(), userToken).subscription(
                     OnPaymentMethodChangeSubscription()
-                ).execute()
-            } catch (e: ApolloException) {
+                ).toFlow().first()
+            } catch (e: Exception) {
                 Log.e(TAG, "Exception paymentChange: ${e.localizedMessage}")
 
                 Log.e(TAG, "apolloResponse ${e.message}")
@@ -236,25 +289,33 @@ class PurchaseFragment : BaseFragment<FragmentPurchaseNewBinding>() {
                         }
                     }
                 }
-                paymentMethod.removeAt(i)
-                var paymentData =
-                    GetPaymentMethodsQuery.GetPaymentMethod(
-                        isAllowed = response.data!!.onPaymentMethodChange!!.isAllowed!!,
-                        paymentMethod = response.data!!.onPaymentMethodChange!!.paymentMethod!!
-                    )
-                paymentMethod.add(i, paymentData)
+                if (paymentMethod.isNotEmpty() && i in paymentMethod.indices) {
+                    paymentMethod.removeAt(i)
+                    var paymentData =
+                        GetPaymentMethodsQuery.GetPaymentMethod(
+                            isAllowed = response.data!!.onPaymentMethodChange!!.isAllowed!!,
+                            paymentMethod = response.data!!.onPaymentMethodChange!!.paymentMethod!!
+                        )
+                    paymentMethod.add(i, paymentData)
+                }
+
 
                 if (::paymentBottomsheetDialog.isInitialized && paymentBottomsheetDialog.isShowing) {
 
                     for (avc in paymentMethod) {
 
-                        if (avc!!.paymentMethod.contentEquals("Gpay")) {
+                        if (avc!!.paymentMethod.contentEquals("Google Pay")) {
                             if (avc.isAllowed) {
-                                googlePay.visibility = View.VISIBLE
+                                googlePay.setViewVisible()
                             } else {
                                 googlePay.visibility = View.GONE
                             }
-
+                        } else if (avc.paymentMethod.contentEquals("InApp")) {
+                            if (avc.isAllowed) {
+                                google.setViewVisible()
+                            } else {
+                                google.visibility = View.GONE
+                            }
                         } else if (avc.paymentMethod.contentEquals("Paypal")) {
                             if (avc.isAllowed) {
                                 payapal.visibility = View.VISIBLE
@@ -434,13 +495,18 @@ class PurchaseFragment : BaseFragment<FragmentPurchaseNewBinding>() {
         payapalRadioButton = customView.findViewById<RadioButton>(R.id.rb_paypal)
         val proceedToPayment = customView.findViewById<MaterialCardView>(R.id.cd_proceedtopayment)
         for (avc in paymentMethod) {
-            if (avc!!.paymentMethod.contentEquals("Gpay")) {
+            if (avc!!.paymentMethod.contentEquals("Google Pay")) {
                 if (avc.isAllowed) {
-                    googlePay.visibility = View.VISIBLE
+                    googlePay.setViewVisible()
                 } else {
                     googlePay.visibility = View.GONE
                 }
-
+            } else if (avc.paymentMethod.contentEquals("InApp")) {
+                if (avc.isAllowed) {
+                    google.setViewVisible()
+                } else {
+                    google.visibility = View.GONE
+                }
             } else if (avc.paymentMethod.contentEquals("Paypal")) {
                 if (avc.isAllowed) {
                     payapal.visibility = View.VISIBLE
@@ -551,7 +617,7 @@ class PurchaseFragment : BaseFragment<FragmentPurchaseNewBinding>() {
                 selectedSku = sku
                 selectedCoins = coins
                 selectedPrice = buyingPrice
-                paymentMeth = "Gpay"
+                paymentMeth = "Google Pay"
                 requestPayment()
                 paymentBottomsheetDialog.dismiss()
 
